@@ -1,0 +1,116 @@
+<div id="abilities" class="section overlay-cream">
+  <div class="container">
+  <div class="row">
+    <div class="col-xs-12
+                col-md-offset-2 col-md-8">
+      <h2 class="text-center">
+        Abilities
+      </h2>
+      <hr>
+    </div>
+  </div>
+
+    <!--<div *ngFor="let abilityArray of abilitySection; let z = index">-->
+      <!--<div [ngClass]="(z % 2 ==0)?'text-center row':'text-center'">-->
+        <!--<div class="col-sm-offset-2 col-sm-8 col-sm-offset-right-2">-->
+          <!--<div class="col-xs-12-->
+                      <!--col-md-6">-->
+            <!--<h4>{{abilityArray[0].abilityType}}</h4>-->
+            <!--<ul class="no-bullets" *ngFor="let ability of abilityArray">-->
+              <!--<li>-->
+                <!--<span class="ability-title text-left">{{ability.abilityName}}:</span>-->
+                <!--<span *ngFor="let i of getArray(5)" [ngClass]="(i> ability.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>-->
+              <!--</li>-->
+            <!--</ul>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+
+    <div class="row text-center">
+      <div class="col-sm-offset-2 col-sm-8 col-sm-offset-right-2">
+
+        <div class="col-xs-12
+                    col-md-6">
+          <h4>Languages</h4>
+          <ul class="no-bullets" *ngFor="let lang of languages">
+            <li>
+              <span class="ability-title text-left">{{lang.abilityName}}:</span>
+              <span *ngFor="let i of getArray(5)" [ngClass]="(i> lang.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-12
+                    col-md-6">
+          <h4>Testing</h4>
+          <ul class="no-bullets" *ngFor="let tool of testTools">
+            <li>
+              <span class="ability-title text-left">{{tool.abilityName}}:</span>
+              <span *ngFor="let i of getArray(5)" [ngClass]="(i> tool.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-sm-offset-2 col-sm-8 col-sm-offset-right-2">
+
+        <div class="col-xs-12
+                    col-md-6">
+          <h4>Web Frameworks</h4>
+          <ul class="no-bullets" *ngFor="let framework of frameworks">
+            <li>
+              <span class="ability-title text-left">{{framework.abilityName}}:</span>
+              <span *ngFor="let i of getArray(5)" [ngClass]="(i> framework.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-12
+                    col-md-6">
+          <h4>Databases</h4>
+          <ul class="no-bullets" *ngFor="let db of databases">
+            <li>
+              <span class="ability-title text-left">{{db.abilityName}}:</span>
+              <span *ngFor="let i of getArray(5)" [ngClass]="(i> db.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-sm-offset-2 col-sm-8 col-sm-offset-right-2">
+
+        <div class="col-xs-12
+                    col-md-6">
+          <h4>Operating Systems</h4>
+          <ul class="no-bullets" *ngFor="let os of operatingSys">
+            <li>
+              <span class="ability-title text-left">{{os.abilityName}}:</span>
+              <span *ngFor="let i of getArray(5)" [ngClass]="(i> os.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-xs-12
+                    col-md-6">
+          <h4>Tools</h4>
+          <ul class="no-bullets" *ngFor="let tool of devTools">
+            <li>
+              <span class="ability-title text-left">{{tool.abilityName}}:</span>
+              <span *ngFor="let i of getArray(5)" [ngClass]="(i> tool.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.size-50{
+  width: 190px;
+  height: 190px;
+}
+
+.font-18px{
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.site-profile-img {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.padding-20px{
+  padding-bottom: 10px;
+}

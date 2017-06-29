@@ -1,0 +1,34 @@
+.star-icon {
+  color: darkgrey;
+  font-size: 15px;
+  position: relative;
+}
+
+.star-icon.full:before {
+  color: #e35a2e;
+  content: '\2605'; /* Full star in UTF8 */
+  position: absolute;
+  left: 0;
+}
+
+.star-icon.empty:before{
+  color: lightgray;
+  content: '\2605'; /* Full star in UTF8 */
+  position: absolute;
+  left: 0;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+li .ability-title {
+  display: inline-block;
+  width: 50%;
+}
+
+hr{
+  border: 1px solid lightgray;
+}

@@ -1,0 +1,118 @@
+.title-font{
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  color: white;
+  word-spacing: -2px;
+}
+
+.navbar {
+  /*background-color: #2f5a78;*/
+
+  opacity: 0.75;
+  border: 0px;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+  background-color: transparent;
+}
+
+.nav.navbar-nav li a {
+  color: white;
+  letter-spacing: 1px;
+  font-size: 17px;
+}
+
+
+.link {
+  position: relative;
+  display: block;
+  padding: 16px 0;
+  margin: 0 12px;
+  letter-spacing: 1px;
+  line-height: 16px;
+  transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+  color: #e35a2e;
+}
+.link::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #e35a2e;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  -webkit-transition: color 0.1s,transform 0.2s ease-out;
+  -moz-transition: color 0.1s,transform 0.2s ease-out;
+  -ms-transition: color 0.1s,transform 0.2s ease-out;
+  -o-transition: color 0.1s,transform 0.2s ease-out;
+  transition: color 0.1s,transform 0.2s ease-out;
+}
+
+.link:hover::before, .link:focus::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  z-index: 5;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  /*-webkit-animation-duration: 2s;*/
+  /*animation-duration: 2s;*/
+}
+.return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  z-index: 5;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+
+  .return-to-top:hover {
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .return-to-top:hover i {
+    z-index: 5;
+    color: #fff;
+    top: 5px;
+  }
+}
+
+.fade-in{
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+.fade-out{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}

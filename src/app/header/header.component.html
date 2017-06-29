@@ -1,0 +1,32 @@
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand title-font">Code By Alex</a>
+
+      <button type="button" class="navbar-toggle collapsed" (click)="toggleState()">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-right" >
+      <div class="collapse navbar-collapse" [ngClass]="{'in': isIn}">
+        <ul class="nav navbar-nav">
+          <li><a href="#about" class="link" (click)="scroll('about', $event)" (click)="closeNav()">ABOUT</a></li>
+          <li><a href="#abilities" class="link" (click)="scroll('abilities', $event)" (click)="closeNav()">ABILITIES</a></li>
+          <li><a href="#experience" class="link" (click)="scroll('experience', $event)" (click)="closeNav()">EXPERIENCE</a></li>
+          <li><a href="#contact" class="link" (click)="scroll('contact', $event)" (click)="closeNav()">CONTACT</a></li>
+        </ul>
+      </div>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div>
+  <div href="#home" (click)="scroll('home', $event)" [ngClass]="(vertPosition<=180)?'return-to-top fade-out disable ':'return-to-top fade-in'">
+    <i class="glyphicon glyphicon-chevron-up"></i>
+  </div>
+</div>

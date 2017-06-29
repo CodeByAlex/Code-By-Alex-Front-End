@@ -1,0 +1,42 @@
+.banner-section {
+  background-size: cover;
+  min-height: 100vh;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+
+.bg-image {
+  background-image: url(./../../assets/cup-of-coffee.jpg);
+  background-size: cover;
+}
+
+.hero-section-text {
+  color: #fefefe;
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section-text{
+  color: white;
+  font-size: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.overlay {
+  background-color: #6cc5db;
+  position: absolute;
+  top: 0px;
+  /*bottom: 0px;*/
+  left: 0px;
+  right: 0px;
+  opacity: 0.70;
+  z-index: 1;
+  height: 100vh;
+}
