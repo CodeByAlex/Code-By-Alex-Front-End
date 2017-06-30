@@ -1,4 +1,6 @@
-# AlexanderWilsonSite
+# Code By Alex Site
+
+This site can be found live at CodeByAlex.com.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
 
