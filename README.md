@@ -1,6 +1,6 @@
 # Code By Alex Site
 
-This site can be found live at https://CodeByAlex.com.
+This site can be found live at http://CodeByAlex.com.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.2.
 
