@@ -10,13 +10,19 @@
 
 .padding-20px{
   padding-bottom: 10px;
+  padding-top: 20px;
 }
 
 .site-profile-img {
   border-radius: 200px;
-  display: block;
+  /*display: block;*/
   margin: 0 auto;
   box-sizing: border-box;
-  /*background-color: #DDD;*/
   /*border: 10px solid #cfd8dc;*/
+}
+
+@media (max-width: 768px) {
+  .center-mobile-text{
+    text-align: center;
+  }
 }

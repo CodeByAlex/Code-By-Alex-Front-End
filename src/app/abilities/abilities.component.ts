@@ -24,7 +24,7 @@ export class AbilitiesComponent implements OnInit {
     this.databases = [new Ability("Databases", "Oracle", 4), new Ability("Databases", "H2", 2), new Ability("Databases", "Mongo", 1)];
     this.operatingSys = [new Ability("Operating Systems", "Windows", 5), new Ability("Operating Systems", "Linux", 3), new Ability("Operating Systems", "OSX", 3)];
     this.devTools = [new Ability("Development Tools", "Eclipse", 5), new Ability("Development Tools","Netbeans", 4),  new Ability("Development Tools","GitLab", 4),
-      new Ability("Development Tools","SourceTree", 3), new Ability("Development Tools","Maven", 3), new Ability("Development Tools","Latex", 3), new Ability("Development Tools","Splunk", 1)];
+      new Ability("Development Tools","SourceTree", 3), new Ability("Development Tools","Maven", 3), new Ability("Development Tools","Latex", 3)];
     this.abilitySection=[this.languages, this.frameworks, this.testTools, this.databases, this.operatingSys, this.devTools]
 
     this.starNumber=5;
