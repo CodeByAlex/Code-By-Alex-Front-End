@@ -13,30 +13,43 @@
 }
 
 .hero-section-text {
-  color: #fefefe;
+  color: white;
   font-family: 'Raleway', sans-serif;
   position: relative;
   text-align: center;
   z-index: 2;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.hero-section-text{
-  color: white;
   font-size: 45px;
   font-weight: 700;
   text-transform: uppercase;
-  font-weight: 700;
 }
 
 .overlay {
   background-color: #6cc5db;
   position: absolute;
   top: 0px;
-  /*bottom: 0px;*/
   left: 0px;
   right: 0px;
   opacity: 0.70;
   z-index: 1;
   height: 100vh;
+}
+
+.horizontal-line {
+  position:relative;
+  left:50%;
+  border-bottom:1px solid white;
+  width:0%;
+  animation: line 2s linear forwards;
+}
+
+@keyframes line {
+  from {
+    left:50%;
+    width:0%;
+  }
+  to {
+    left:5%;
+    width:90%;
+  }
 }

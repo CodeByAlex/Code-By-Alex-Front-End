@@ -50,3 +50,18 @@ body{
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Fade-In Effect */
+.visible-trans {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+  vertical-align: middle;
+}
+/* Fade-Out Effect */
+.hidden-trans {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+  vertical-align: middle;
+}
