@@ -3,8 +3,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .bg-image {
@@ -12,7 +10,14 @@
   background-size: cover;
 }
 
-.hero-section-text {
+.banner-content-wrapper > div {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-text {
   color: white;
   font-family: 'Raleway', sans-serif;
   position: relative;
@@ -54,12 +59,6 @@
   60% {
     transform: translateY(15px);
   }
-}
-
-.banner-arrow-wrapper{
-  position: absolute;
-  bottom: 0;
-  left: calc(50vw - 4rem);
 }
 
 .arrow {

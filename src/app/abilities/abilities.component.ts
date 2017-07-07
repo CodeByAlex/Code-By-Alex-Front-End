@@ -17,7 +17,7 @@ export class AbilitiesComponent implements OnInit {
   starNumber:number;
 
   constructor() {
-    this.languages =[new Ability("Languages", "Java", 5), new Ability("Languages", "HTML", 4), new Ability("Languages", "CSS", 4), new Ability("Languages", "SQL", 3),
+    this.languages =[new Ability("Languages", "Java", 5), new Ability("Languages", "HTML", 4), new Ability("Languages", "CSS", 3), new Ability("Languages", "SQL", 3),
       new Ability("Languages", "Typescript", 2), new Ability("Languages", "JQuery", 2), new Ability("Languages", "Python", 1), new Ability("Languages", "NodeJs", 1)];
     this.frameworks = [new Ability("Frameworks", "AngularJs", 3)];
     this.testTools = [new Ability("Test Tools", "Junit", 5), new Ability("Test Tools", "Fitnesse", 5), new Ability("Test Tools", "Postman", 3), new Ability("Test Tools", "Jasmine", 1)];
