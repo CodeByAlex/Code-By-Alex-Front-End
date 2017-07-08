@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Ability} from "./ability";
+import {ComponentTrackingService} from "../component-tracking.service";
 
 @Component({
   selector: 'app-abilities',
@@ -14,10 +15,10 @@ export class AbilitiesComponent implements OnInit {
   operatingSys: Array<Ability>;
   devTools: Array<Ability>;
   abilitySection: Array<Array<Ability>>;
-  starNumber:number;
+  starNumber: number;
 
-  constructor() {
-    this.languages =[new Ability("Languages", "Java", 5), new Ability("Languages", "HTML", 4), new Ability("Languages", "CSS", 3), new Ability("Languages", "SQL", 3),
+  constructor(private componentTracker: ComponentTrackingService) {
+    this.languages = [new Ability("Languages", "Java", 5), new Ability("Languages", "HTML", 4), new Ability("Languages", "CSS", 3), new Ability("Languages", "SQL", 3),
       new Ability("Languages", "Typescript", 2), new Ability("Languages", "JQuery", 2), new Ability("Languages", "Python", 1), new Ability("Languages", "NodeJs", 1)];
     this.frameworks = [new Ability("Frameworks", "AngularJs", 3)];
     this.testTools = [new Ability("Test Tools", "Junit", 5), new Ability("Test Tools", "Fitnesse", 5), new Ability("Test Tools", "Postman", 3), new Ability("Test Tools", "Jasmine", 1)];
@@ -25,20 +26,25 @@ export class AbilitiesComponent implements OnInit {
     this.operatingSys = [new Ability("Operating Systems", "Windows", 5), new Ability("Operating Systems", "Linux", 3), new Ability("Operating Systems", "OSX", 3)];
     this.devTools = [new Ability("Development Tools", "Eclipse", 5), new Ability("Development Tools","Netbeans", 4),  new Ability("Development Tools","GitLab", 4),
       new Ability("Development Tools","SourceTree", 3), new Ability("Development Tools","Maven", 3), new Ability("Development Tools","Latex", 3)];
-    this.abilitySection=[this.languages, this.frameworks, this.testTools, this.databases, this.operatingSys, this.devTools]
+    this.abilitySection = [this.languages, this.frameworks, this.testTools, this.databases, this.operatingSys, this.devTools]
 
-    this.starNumber=5;
+    this.starNumber = 5;
   }
 
   ngOnInit() {
 
   }
 
-  getArray(num:number){
-    let array=new Array(num);
-    for(let i=0;i<num; i++){
-      array[i]=i+1;
+  getArray(num: number) {
+    let array = new Array(num);
+    for (let i = 0; i < num; i++) {
+      array[i] = i + 1;
     }
     return array;
+  }
+
+  @HostListener('mouseover') onMouseOver() {
+    this.componentTracker.setNewFocus('abilities');
+
   }
 }

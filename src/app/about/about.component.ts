@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {ComponentTrackingService} from "../component-tracking.service";
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private componentTracker: ComponentTrackingService) { }
 
   ngOnInit() {
   }
 
+  @HostListener('mouseover') onMouseOver() {
+    this.componentTracker.setNewFocus('about');
+  };
 }

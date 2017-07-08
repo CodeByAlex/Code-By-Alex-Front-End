@@ -11,12 +11,13 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { AbilitiesComponent } from './abilities/abilities.component';
 import { BannerComponent } from './banner/banner.component';
-import {WindowService} from "app/window.service";
-import {SmoothScrollService} from "./smooth-scroll.service";
-import {EmailService} from "./contact/email.service";
-import {PhonePipe} from "./contact/phonePipe";
+import {WindowService} from 'app/window.service';
+import {SmoothScrollService} from './smooth-scroll.service';
+import {EmailService} from './contact/email.service';
+import {PhonePipe} from './contact/phonePipe';
 import { ErrorMessagesComponent } from './error-messages/error-messages.component';
-import {ConfigurationService} from "./config/configuration.service";
+import {ConfigurationService} from './config/configuration.service';
+import {ComponentTrackingService} from './component-tracking.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import {ConfigurationService} from "./config/configuration.service";
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [ WindowService, SmoothScrollService, EmailService, ConfigurationService],
+  providers: [ WindowService, SmoothScrollService, EmailService, ConfigurationService, ComponentTrackingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

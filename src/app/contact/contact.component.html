@@ -1,6 +1,5 @@
 <div id="contact" class="section overlay-cream">
   <div class="container text-color">
-    <!--<div class="row">-->
     <div class="col-xs-12
                 col-md-offset-2 col-md-8 col-md-offset-2">
       <h1 class="text-center">
@@ -8,13 +7,7 @@
       </h1>
       <hr>
     </div>
-  <!--</div>-->
-<!--<div class="row">-->
-    <!--<div class="flex-container col-xs-12">-->
-      <!--<form id="contact-form" class="col-xs-12 col-sm-offset-3 col-sm-6 col-sm-offset-3" [ngClass]="(submitted==true)? 'hidden-trans':'visible-trans'" [formGroup]="contactForm" (ngSubmit)="onSubmit()">-->
-    <!--<div class="text-center col-xs-12 col-sm-offset-3 col-sm-6 col-sm-offset-3" [ngClass]="submitted==true? 'visible-trans':'hidden-trans'">-->
-      <!--<h4>Thank You For Your Submission!</h4> {{submitted}}-->
-    <!--</div>-->
+
     <form id="contact-form" class="col-xs-12 col-sm-offset-3 col-sm-6 col-sm-offset-3" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div class="row fade-out">
           <div class="form-group" [ngClass]="{'has-error':!contactForm.controls['contact-name'].valid && contactForm.controls['contact-name'].touched}">
@@ -77,6 +70,4 @@
       <h4>Thank You For Your Submission!</h4>
     </div>
   </div>
-  <!--</div>-->
-  <!--</div>-->
 </div>

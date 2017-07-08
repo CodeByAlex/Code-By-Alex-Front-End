@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand title-font" href="#home" (click)="scroll('home', $event)">Code By Alex</a>
+      <a id="home-link" class="navbar-brand title-font" href="#home" (click)="scroll('home', $event)">Code By Alex</a>
       <button type="button" class="navbar-toggle collapsed" (click)="toggleState()">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -14,10 +14,10 @@
     <div class="navbar-right" >
       <div class="collapse navbar-collapse" [ngClass]="{'in': isIn}">
         <ul class="nav navbar-nav">
-          <li><a href="#about" class="link" (click)="scroll('about', $event)" (click)="closeNav()">ABOUT</a></li>
-          <li><a href="#abilities" class="link" (click)="scroll('abilities', $event)" (click)="closeNav()">ABILITIES</a></li>
-          <li><a href="#experience" class="link" (click)="scroll('experience', $event)" (click)="closeNav()">EXPERIENCE</a></li>
-          <li><a href="#contact" class="link" (click)="scroll('contact', $event)" (click)="closeNav()">CONTACT</a></li>
+          <li><a id="about-link" href="#about" class="link" (click)="scroll('about', $event)" (click)="closeNav()">ABOUT</a></li>
+          <li><a id="abilities-link" href="#abilities" class="link" (click)="scroll('abilities', $event)" (click)="closeNav()">ABILITIES</a></li>
+          <li><a id="experience-link" href="#experience" class="link" (click)="scroll('experience', $event)" (click)="closeNav()">EXPERIENCE</a></li>
+          <li><a id="contact-link" href="#contact" class="link" (click)="scroll('contact', $event)" (click)="closeNav()">CONTACT</a></li>
         </ul>
       </div>
     </div><!-- /.navbar-collapse -->

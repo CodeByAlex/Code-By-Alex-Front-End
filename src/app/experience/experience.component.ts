@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {CompanyRole} from "./company-role";
+import {ComponentTrackingService} from "../component-tracking.service";
 
 @Component({
   selector: 'app-experience',
@@ -9,7 +10,7 @@ import {CompanyRole} from "./company-role";
 export class ExperienceComponent implements OnInit {
   roles: Array<CompanyRole>;
 
-  constructor() {
+  constructor(private componentTracker: ComponentTrackingService) {
     this.roles =[
       new CompanyRole("Full Stack Developer", "Bellese Technologies", "Sep 2016", "Present",
         ["Worked on front end development for proposal exercises and assisted in the writing effort",
@@ -33,11 +34,14 @@ export class ExperienceComponent implements OnInit {
           "Assisted the User Experience department with refacing the Bloomberg Law website and fix accessibility issues"],
         "./../../assets/bbna-logo.png"),
 
-    ]
+    ];
   }
 
   ngOnInit() {
 
   }
 
+  @HostListener('mouseover') onMouseOver() {
+    this.componentTracker.setNewFocus('experience');
+  };
 }

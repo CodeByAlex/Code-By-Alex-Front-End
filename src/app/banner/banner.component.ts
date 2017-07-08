@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {SmoothScrollService} from "../smooth-scroll.service";
+import {ComponentTrackingService} from "../component-tracking.service";
 
 @Component({
   selector: 'app-banner',
@@ -8,10 +9,14 @@ import {SmoothScrollService} from "../smooth-scroll.service";
 })
 export class BannerComponent {
 
-  constructor(private ss: SmoothScrollService) { }
+  constructor(private ss: SmoothScrollService, private componentTracker: ComponentTrackingService) { }
 
-  scroll(eid, event){
+  scroll(eid, event) {
     event.preventDefault();
     this.ss.smoothScroll(eid);
   }
+
+  @HostListener('mouseover') onMouseOver() {
+    this.componentTracker.setNewFocus('home');
+  };
 }

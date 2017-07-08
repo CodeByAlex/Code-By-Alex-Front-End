@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ContactInfo} from "./contactInfo";
 import {EmailService} from "./email.service";
+import {ComponentTrackingService} from "../component-tracking.service";
 
 @Component({
   selector: 'app-contact',
@@ -10,10 +11,10 @@ import {EmailService} from "./email.service";
 })
 export class ContactComponent implements OnInit {
   @Input() contactInfo: ContactInfo;
-  submitted=false;
+  submitted = false;
   contactForm: FormGroup;
 
-  constructor(private emailService: EmailService, private formBuilder: FormBuilder) {
+  constructor(private emailService: EmailService, private componentTracker: ComponentTrackingService, private formBuilder: FormBuilder) {
     this.contactForm = this.formBuilder.group({
       'contact-name': ['', Validators.required],
       'contact-email': ['', Validators.compose([Validators.required, Validators.email])],
@@ -26,8 +27,8 @@ export class ContactComponent implements OnInit {
     this.contactInfo = {name: null, email: null, phone: null, message: null};
   }
 
-  onSubmit(){
-    this.submitted=true;
+  onSubmit() {
+    this.submitted = true;
     const newContact: ContactInfo = new ContactInfo(
       this.contactForm.get('contact-name').value,
       this.contactForm.get('contact-email').value,
@@ -35,18 +36,23 @@ export class ContactComponent implements OnInit {
       this.contactForm.get('contact-message').value);
     this.sendMail(newContact);
     this.contactForm.reset();
-    setTimeout(()=>{
-      this.submitted=false;
+    setTimeout(() => {
+      this.submitted = false;
     }, 5000);
   }
 
-  sendMail(newContact:ContactInfo){
-
+  sendMail(newContact: ContactInfo) {
     this.emailService.sendEmail(newContact).subscribe(res => {
       console.log('Email Success', res);
-      console.log("Email Sent: Name - "+newContact.name+", Email - "+newContact.email+", Phone Number - "+newContact.phone+", Message - "+newContact.message);
+      console.log('Email Sent: Name - ' + newContact.name + ', Email - ' + newContact.email +
+        ', Phone Number - ' + newContact.phone +
+        ', Message - ' + newContact.message);
     }, error => {
       console.log('Email Error', error);
-    })
+    });
   }
+
+  @HostListener('mouseover') onMouseOver() {
+    this.componentTracker.setNewFocus('contact');
+  };
 }

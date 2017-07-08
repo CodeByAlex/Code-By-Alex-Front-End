@@ -41,6 +41,10 @@ export class SmoothScrollService {
       leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
     }
   }
+
+  getYPosition(eID) {
+    return elmYPosition(eID);
+  }
 }
 
 function elmYPosition(eID) {
