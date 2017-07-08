@@ -47,8 +47,7 @@
   transition: color 0.1s,transform 0.2s ease-out;
 }
 
-/*.link:hover::before,*/
-.link:focus::before {
+.link:hover::before, .link:focus::before {
   transform-origin: left top;
   transform: scale(1, 1);
 }
