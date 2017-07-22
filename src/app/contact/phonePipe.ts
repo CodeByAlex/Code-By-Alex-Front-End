@@ -7,14 +7,14 @@ import {Pipe, PipeTransform} from "@angular/core";
 @Pipe({
   name: 'phone'
 })
-export class PhonePipe implements PipeTransform{
-  transform(val, args) {
-    var value = val.toString().replace(/\D+/g, '');
+export class PhonePipe implements PipeTransform {
+  transform(val) {
+    const value = val.toString().replace(/\D+/g, '');
     if (value.match(/[^0-9]/)) {
       return val;
     }
 
-    var country, city, number;
+    let country, city, number;
 
     switch (value.length) {
       case 10: // +1PPP####### -> C (PPP) ###-####
@@ -40,11 +40,18 @@ export class PhonePipe implements PipeTransform{
     }
 
     if (country == 1) {
-      country = "";
+      country = '';
     }
 
     number = number.slice(0, 3) + '-' + number.slice(3);
 
     return (country + " (" + city + ") " + number).trim();
+  }
+
+  parse(value: string): string {
+    if (value == null || value == '') {
+      return value;
+    }
+    return value.replace(/\)/g, '').replace(/\(/g, '').replace(/\-/g, '').replace(/\s/g, '');
   }
 }

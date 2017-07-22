@@ -39,11 +39,13 @@
             <input type="text"
                    id="contact-phone-number"
                    class="form-control"
-                   (ngModelChange)="contactInfo.phone=$event"
+                   appPhoneFormatter
+                   (ngModelChange)="changePhoneModel($event)"
                    [ngModel]="contactInfo.phone"
                    formControlName="contact-phone-number"
                    placeholder="(xxx) xxx-xxxx"
-                   maxlength="17">
+                   maxlength="12"
+                   >
           </div>
         </div>
         <div class="row">

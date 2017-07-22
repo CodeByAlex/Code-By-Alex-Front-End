@@ -27,3 +27,8 @@ hr{
   flex-direction: column;
   /*text-align: center;*/
 }
+
+.logo-size{
+  width: 30px;
+  height: 30px;
+}

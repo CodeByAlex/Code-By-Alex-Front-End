@@ -52,6 +52,10 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  changePhoneModel(val: number) {
+    this.contactInfo.phone = val;
+  }
+
   @HostListener('mouseover') onMouseOver() {
     this.componentTracker.setNewFocus('contact');
   };

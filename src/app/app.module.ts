@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { ExperienceComponent } from './experience/experience.component';
@@ -18,6 +17,7 @@ import {PhonePipe} from './contact/phonePipe';
 import { ErrorMessagesComponent } from './error-messages/error-messages.component';
 import {ConfigurationService} from './config/configuration.service';
 import {ComponentTrackingService} from './component-tracking.service';
+import { PhoneFormatterDirective } from './contact/phone-formatter.directive';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import {ComponentTrackingService} from './component-tracking.service';
     BannerComponent,
     PhonePipe,
     ErrorMessagesComponent,
+    PhoneFormatterDirective,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,7 @@ import {ComponentTrackingService} from './component-tracking.service';
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [ WindowService, SmoothScrollService, EmailService, ConfigurationService, ComponentTrackingService],
+  providers: [ WindowService, SmoothScrollService, EmailService, ConfigurationService, ComponentTrackingService, PhonePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

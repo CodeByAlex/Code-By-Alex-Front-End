@@ -1,6 +1,6 @@
 .banner-content-wrapper{
   max-height: 100vh;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -67,6 +67,7 @@
   z-index: 3;
   font-size: 35px;
   font-weight: 200;
+  padding-bottom: 30px;
 }
 
 .bounce {
