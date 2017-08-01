@@ -1,6 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {CompanyRole} from "./company-role";
-import {ComponentTrackingService} from "../component-tracking.service";
 
 @Component({
   selector: 'app-experience',
@@ -9,8 +8,10 @@ import {ComponentTrackingService} from "../component-tracking.service";
 })
 export class ExperienceComponent implements OnInit {
   roles: Array<CompanyRole>;
+  showModal: boolean;
+  expSection: any;
 
-  constructor(private componentTracker: ComponentTrackingService) {
+  constructor() {
     this.roles =[
       new CompanyRole("Full Stack Developer", "Bellese Technologies", "Sep 2016", "Present",
         ["Worked on front end development for proposal exercises and assisted in the writing effort",
@@ -38,10 +39,11 @@ export class ExperienceComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.showModal = false;
   }
 
-  @HostListener('mouseover') onMouseOver() {
-    this.componentTracker.setNewFocus('experience');
-  };
+  switchSectionView(expSection) {
+    this.showModal = this.showModal === false ? true : false;
+    this.expSection = expSection;
+  }
 }

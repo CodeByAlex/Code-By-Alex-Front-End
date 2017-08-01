@@ -1,6 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Ability} from "./ability";
-import {ComponentTrackingService} from "../component-tracking.service";
 
 @Component({
   selector: 'app-abilities',
@@ -17,7 +16,7 @@ export class AbilitiesComponent implements OnInit {
   abilitySection: Array<Array<Ability>>;
   starNumber: number;
 
-  constructor(private componentTracker: ComponentTrackingService) {
+  constructor() {
     this.languages = [new Ability("Languages", "Java", 5), new Ability("Languages", "HTML", 4), new Ability("Languages", "CSS", 3), new Ability("Languages", "SQL", 3),
       new Ability("Languages", "Typescript", 2), new Ability("Languages", "JQuery", 2), new Ability("Languages", "Python", 1), new Ability("Languages", "NodeJs", 1)];
     this.frameworks = [new Ability("Frameworks", "AngularJs", 3)];
@@ -41,10 +40,5 @@ export class AbilitiesComponent implements OnInit {
       array[i] = i + 1;
     }
     return array;
-  }
-
-  @HostListener('mouseover') onMouseOver() {
-    this.componentTracker.setNewFocus('abilities');
-
   }
 }

@@ -11,12 +11,13 @@
 
 
 .service_box{
-  margin:40px 0;
-  padding:30px 20px;
+  margin:41px 15px;
+  padding:30px 5px;
   text-align: center;
-  border-radius:5px;
-  background:rgba(59, 63, 66,0.7);
+  /*border-radius:5px;*/
+  background: #89a0ae;
   transition: all 0.30s ease 0s;
+  box-shadow: 4px 4px 5px grey;
 }
 
 .service_box:hover{
@@ -34,7 +35,7 @@
   transition: all 0.30s ease 0s;
 }
 .service_box:hover .service_icon{
-  transform: translateY(-100%);
+  transform: translateY(-95%);
 }
 .service_box .service_icon i{
   color:#333;
@@ -59,6 +60,7 @@
   transition: all 0.30s linear 0s;
 }
 .service_box:hover .fader{
+  display: inherit;
   opacity:1;
 }
 
@@ -102,4 +104,33 @@ a.btn,.btn {
 .btn-gray {
   background: #808080;
   color: #fff;
+}
+
+@keyframes fade-in-animation {
+  0%   {
+    opacity:0;
+    display:none;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@keyframes fade-out-animation {
+  0%   {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    display: none;
+  }
+}
+
+
+.fade-in {
+  animation: fade-in-animation 1s infinite;
+}
+
+.fade-out {
+  animation: fade-out-animation 1s infinite;
 }

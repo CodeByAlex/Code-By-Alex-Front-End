@@ -1,105 +1,131 @@
-<div id="experience" class="section overlay-white">
+<div id="experience" class="section-style overlay-white">
     <div class="container">
-      <h1 class="text-center">
-        Experience
-      </h1>
-      <div class="row">
-        <div class="col-md-4 col-sm-12">
-          <div class="service_box">
-            <div class="service_icon">
-              <i class="fa fa-code"></i>
+      <div id="experience-default" [hidden]="showModal">
+          <h1 class="text-center">
+            Experience
+          </h1>
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="service_box">
+                <div class="service_icon">
+                  <i class="fa fa-code"></i>
+                </div>
+                <h3>Front End</h3>
+                <div class="fader">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
+                  <a href="#experience"><button (click)="switchSectionView('1')" class="btn btn-medium btn-gray">Learn More</button></a>
+                </div>
+              </div>
             </div>
-            <h3>UI Developer</h3>
-            <div class="fader">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
-              <a class="btn btn-medium btn-gray" href="#">Learn More</a>
+            <div class="col-md-4 col-sm-12">
+              <div class="service_box">
+                <div class="service_icon">
+                  <i class="fa fa-database"></i>
+                </div>
+                <h3>Back End</h3>
+                <div class="fader">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
+                  <a href="#experience"><button (click)="switchSectionView('2')" class="btn btn-medium btn-gray">Learn More</button></a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <div class="service_box">
-            <div class="service_icon">
-              <i class="fa fa-database"></i>
+            <div class="col-md-4 col-sm-12">
+              <div class="service_box">
+                <div class="service_icon">
+                  <i class="fa fa-user"></i>
+                </div>
+                <h3>User Experience</h3>
+                <div class="fader">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
+                  <a href="#experience"><button (click)="switchSectionView('3')" class="btn btn-medium btn-gray">Learn More</button></a>
+                </div>
+              </div>
             </div>
-            <h3>Backend Developer</h3>
-            <div class="fader">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
-              <a class="btn btn-medium btn-gray" href="#">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12">
-          <div class="service_box">
-            <div class="service_icon">
-              <i class="fa fa-user"></i>
-            </div>
-            <h3>User Experience</h3>
-            <div class="fader">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
-              <a class="btn btn-medium btn-gray" href="#">Learn More</a>
-            </div>
-          </div>
         </div>
       </div>
-
-    <div *ngFor="let role of roles">
-      <hr>
-      <div class="row">
-        <div class="col-sm-2 col-xs-12 text-center">
-          <img src="{{role.imageLoc}}" class="comp-logo-size">
+      <div id="experience-types" [hidden]="!showModal">
+        <div id = "exit" (click)="switchSectionView('0')" class="text-right"><h3>X</h3></div>
+        <div id="experience-front-end" *ngIf="expSection=='1'">
+          <h3>Front End Work</h3>
+          <div *ngFor="let role of roles">
+            <hr>
+            <div class="row">
+              <div class="col-sm-2 col-xs-12 text-center">
+                <img src="{{role.imageLoc}}" class="comp-logo-size">
+              </div>
+              <div class="col-sm-3 text-center">
+                <div class="title-size">{{role.position}}</div>
+                <p>{{role.company}}</p>
+                <p>{{role.startDate}} - {{role.endDate}}</p>
+              </div>
+              <div class="col-sm-7">
+                <ul>
+                  <li *ngFor="let res of role.responsibilities">{{res}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-3 text-center">
-          <div class="title-size">{{role.position}}</div>
-          <p>{{role.company}}</p>
-          <p>{{role.startDate}} - {{role.endDate}}</p>
+        <div id="experience-back-end" *ngIf="expSection=='2'">
+          <h3>Back End Work</h3>
+          <div *ngFor="let role of roles">
+            <hr>
+            <div class="row">
+              <div class="col-sm-2 col-xs-12 text-center">
+                <img src="{{role.imageLoc}}" class="comp-logo-size">
+              </div>
+              <div class="col-sm-3 text-center">
+                <div class="title-size">{{role.position}}</div>
+                <p>{{role.company}}</p>
+                <p>{{role.startDate}} - {{role.endDate}}</p>
+              </div>
+              <div class="col-sm-7">
+                <ul>
+                  <li *ngFor="let res of role.responsibilities">{{res}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-7">
-          <ul>
-            <li *ngFor="let res of role.responsibilities">{{res}}</li>
-          </ul>
+        <div id="experience-ux" *ngIf="expSection=='3'">
+          <h3>UX Work</h3>
+          <div *ngFor="let role of roles">
+            <hr>
+            <div class="row">
+              <div class="col-sm-2 col-xs-12 text-center">
+                <img src="{{role.imageLoc}}" class="comp-logo-size">
+              </div>
+              <div class="col-sm-3 text-center">
+                <div class="title-size">{{role.position}}</div>
+                <p>{{role.company}}</p>
+                <p>{{role.startDate}} - {{role.endDate}}</p>
+              </div>
+              <div class="col-sm-7">
+                <ul>
+                  <li *ngFor="let res of role.responsibilities">{{res}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!--<div class="exp-card-group">-->
-      <!--<div class="card-option">-->
-        <!--<i class="material-icons">important_devices</i>-->
-        <!--<h1>Ui design</h1>-->
-        <!--<hr />-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>-->
-        <!--<hr />-->
-        <!--<div class="price">-->
-          <!--<div class="back">-->
-            <!--<a href="#" class="button">Learn More</a>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-
-      <!--<div class="card-option">-->
-        <!--<i class="material-icons">perm_identity</i>-->
-        <!--<h1>Ux design</h1>-->
-        <!--<hr />-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>-->
-        <!--<hr />-->
-        <!--<div class="price">-->
-          <!--<div class="back">-->
-            <!--<a href="#" class="button">Learn More</a>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-
-      <!--<div class="card-option">-->
-        <!--<i class="material-icons">art_track</i>-->
-        <!--<h1>Print design</h1>-->
-        <!--<hr />-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente harum voluptatum, sit cum voluptatibus inventore quae qui provident eveniet dicta at, quibusdam ipsam iusto reprehenderit hic saepe nesciunt sed illo.</p>-->
-        <!--<hr />-->
-        <!--<div class="price">-->
-          <!--<div class="back">-->
-            <!--<a href="#" class="button">Learn More</a>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
 </div>
+<!--<div *ngFor="let role of roles">
+<hr>
+<div class="row">
+  <div class="col-sm-2 col-xs-12 text-center">
+    <img src="{{role.imageLoc}}" class="comp-logo-size">
+  </div>
+  <div class="col-sm-3 text-center">
+    <div class="title-size">{{role.position}}</div>
+    <p>{{role.company}}</p>
+    <p>{{role.startDate}} - {{role.endDate}}</p>
+  </div>
+  <div class="col-sm-7">
+    <ul>
+      <li *ngFor="let res of role.responsibilities">{{res}}</li>
+    </ul>
+  </div>
+</div>
+</div>-->

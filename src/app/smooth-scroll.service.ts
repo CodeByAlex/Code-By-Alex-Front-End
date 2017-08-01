@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {WindowService} from "./window.service";
+import {WindowService} from './window.service';
 
 @Injectable()
 export class SmoothScrollService {
@@ -12,33 +12,46 @@ export class SmoothScrollService {
   }
   scrollTo(yPoint: number, duration: number) {
     setTimeout(() => {
-      this.win.window.scrollTo(0, yPoint)
+      this.win.window.scrollTo(0, yPoint);
     }, duration);
     return;
   }
 
   smoothScroll(eID) {
-    var startY = this._win.getCurrentYPosition();
-    var stopY = elmYPosition(eID);
-    var distance = stopY > startY ? stopY - startY : startY - stopY;
+    const startY = this._win.getCurrentYPosition();
+    const stopY = elmYPosition(eID);
+    const distance = stopY > startY ? stopY - startY : startY - stopY;
+    const step = Math.round(distance / 20);
+    let leapY = stopY > startY ? startY + step : startY - step;
+    let speed = Math.round(distance / 20);
+    let timer = 0;
+
     if (distance < 100) {
       this.win.window.scrollTo(0, stopY); return;
     }
-    var speed = Math.round(distance / 50);
-    if (speed >= 20) speed = 20;
-    var step = Math.round(distance / 50);
-    var leapY = stopY > startY ? startY + step : startY - step;
-    var timer = 0;
+
+    if (speed >= 20) {
+      speed = 20;
+    }
+
     if (stopY > startY) {
-      for (var i = startY; i < stopY; i += step) {
+      for (let i = startY; i < stopY; i += step) {
         this.scrollTo(leapY, timer * speed);
         leapY += step;
-        if (leapY > stopY) leapY = stopY; timer++;
+        if (leapY > stopY) {
+          leapY = stopY;
+        }
+        timer++;
       } return;
     }
-    for (var i = startY; i > stopY; i -= step) {
+
+    for (let i = startY; i > stopY; i -= step) {
       this.scrollTo(leapY, timer * speed);
-      leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+      leapY -= step;
+      if (leapY < stopY) {
+        leapY = stopY;
+      }
+      timer++;
     }
   }
 

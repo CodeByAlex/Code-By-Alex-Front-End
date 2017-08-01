@@ -2,7 +2,6 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ContactInfo} from "./contactInfo";
 import {EmailService} from "./email.service";
-import {ComponentTrackingService} from "../component-tracking.service";
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +13,7 @@ export class ContactComponent implements OnInit {
   submitted = false;
   contactForm: FormGroup;
 
-  constructor(private emailService: EmailService, private componentTracker: ComponentTrackingService, private formBuilder: FormBuilder) {
+  constructor(private emailService: EmailService, private formBuilder: FormBuilder) {
     this.contactForm = this.formBuilder.group({
       'contact-name': ['', Validators.required],
       'contact-email': ['', Validators.compose([Validators.required, Validators.email])],
@@ -55,8 +54,4 @@ export class ContactComponent implements OnInit {
   changePhoneModel(val: number) {
     this.contactInfo.phone = val;
   }
-
-  @HostListener('mouseover') onMouseOver() {
-    this.componentTracker.setNewFocus('contact');
-  };
 }
