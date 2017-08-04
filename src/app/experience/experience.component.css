@@ -8,9 +8,8 @@
   font-weight: 500;
 }
 
-
-
 .service_box{
+  height:310px;
   margin:41px 15px;
   padding:30px 5px;
   text-align: center;
@@ -74,6 +73,7 @@ button::-moz-focus-inner {
 input[type="submit"].btn,
 button.btn {
   cursor: pointer;
+
 }
 
 a.btn,.btn {
@@ -126,11 +126,28 @@ a.btn,.btn {
   }
 }
 
-
 .fade-in {
-  animation: fade-in-animation 1s infinite;
+  animation: fade-in-animation 1s;
 }
 
 .fade-out {
-  animation: fade-out-animation 1s infinite;
+  animation: fade-out-animation 1s;
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .mobile-hover .service_box{
+    background:#e35a2e;
+  }
+  .mobile-hover .service_box .service_icon{
+    transform: translateY(-95%);
+  }
+  .mobile-hover .service_box h3{
+    top:-25px;
+  }
+  .mobile-hover .service_box .fader{
+    display: inherit;
+    opacity:1;
+  }
 }

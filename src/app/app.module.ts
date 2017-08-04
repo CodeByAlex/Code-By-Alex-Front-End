@@ -17,6 +17,7 @@ import {PhonePipe} from './contact/phonePipe';
 import { ErrorMessagesComponent } from './error-messages/error-messages.component';
 import {ConfigurationService} from './config/configuration.service';
 import { PhoneFormatterDirective } from './contact/phone-formatter.directive';
+import {ElementFinderService} from "./element-finder.service";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { PhoneFormatterDirective } from './contact/phone-formatter.directive';
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [ WindowService, SmoothScrollService, EmailService, ConfigurationService, PhonePipe],
+  providers: [ WindowService, SmoothScrollService, EmailService, ConfigurationService, PhonePipe, ElementFinderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,51 +1,55 @@
 <div id="experience" class="section-style overlay-white">
     <div class="container">
-      <div id="experience-default" [hidden]="showModal">
+      <div id="experience-default" [ngClass]="expSection==allExperience? 'fade-in':'fade-out'">
           <h1 class="text-center">
             Experience
           </h1>
           <div class="row">
-            <div class="col-md-4 col-sm-12">
-              <div class="service_box">
+            <div class="col-md-4 col-sm-12" [ngClass]="focusedElement =='front-end-service-box'? 'mobile-hover':''">
+              <div id="front-end-service-box" class="service_box">
                 <div class="service_icon">
                   <i class="fa fa-code"></i>
                 </div>
-                <h3>Front End</h3>
+                <h3>Front End<br>Development</h3>
                 <div class="fader">
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
-                  <a href="#experience"><button (click)="switchSectionView('1')" class="btn btn-medium btn-gray">Learn More</button></a>
+                  <a href="#experience"><button (click)="switchSectionView(frontEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 col-sm-12">
-              <div class="service_box">
+            <div class="col-md-4 col-sm-12" [ngClass]="focusedElement =='back-end-service-box'? 'mobile-hover':''" >
+              <div id="back-end-service-box" class="service_box">
                 <div class="service_icon">
                   <i class="fa fa-database"></i>
                 </div>
-                <h3>Back End</h3>
+                <h3>Back End<br>Development</h3>
                 <div class="fader">
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
-                  <a href="#experience"><button (click)="switchSectionView('2')" class="btn btn-medium btn-gray">Learn More</button></a>
+                  <a href="#experience"><button (click)="switchSectionView(backEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 col-sm-12">
-              <div class="service_box">
+            <div class="col-md-4 col-sm-12" [ngClass]="focusedElement =='ux-service-box'? 'mobile-hover':''" >
+              <div id="ux-service-box" class="service_box">
                 <div class="service_icon">
                   <i class="fa fa-user"></i>
                 </div>
-                <h3>User Experience</h3>
+                <h3>User Experience<br>Design</h3>
                 <div class="fader">
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
-                  <a href="#experience"><button (click)="switchSectionView('3')" class="btn btn-medium btn-gray">Learn More</button></a>
+                  <a href="#experience"><button (click)="switchSectionView(userExperience)" class="btn btn-medium btn-gray">Learn More</button></a>
                 </div>
               </div>
             </div>
         </div>
       </div>
-      <div id="experience-types" [hidden]="!showModal">
-        <div id = "exit" (click)="switchSectionView('0')" class="text-right"><h3>X</h3></div>
-        <div id="experience-front-end" *ngIf="expSection=='1'">
+      <div id="experience-types">
+        <div id="experience-front-end" [ngClass]="expSection==frontEnd? 'fade-in':'fade-out'">
+          <div id = "exit1" class="text-right">
+            <a href="#experience">
+              <button (click)="switchSectionView(allExperience)">X</button>
+            </a>
+          </div>
           <h3>Front End Work</h3>
           <div *ngFor="let role of roles">
             <hr>
@@ -66,7 +70,12 @@
             </div>
           </div>
         </div>
-        <div id="experience-back-end" *ngIf="expSection=='2'">
+        <div id="experience-back-end" [ngClass]="expSection==backEnd? 'fade-in':'fade-out'">
+          <div id = "exit2" class="text-right">
+            <a href="#experience">
+              <button (click)="switchSectionView(allExperience)">X</button>
+            </a>
+          </div>
           <h3>Back End Work</h3>
           <div *ngFor="let role of roles">
             <hr>
@@ -87,7 +96,12 @@
             </div>
           </div>
         </div>
-        <div id="experience-ux" *ngIf="expSection=='3'">
+        <div id="experience-ux" [ngClass]="expSection==userExperience? 'fade-in':'fade-out'">
+          <div id = "exit3" class="text-right">
+            <a href="#experience">
+              <button (click)="switchSectionView(allExperience)">X</button>
+            </a>
+          </div>
           <h3>UX Work</h3>
           <div *ngFor="let role of roles">
             <hr>

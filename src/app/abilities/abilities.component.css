@@ -1,6 +1,7 @@
 .star-icon {
-  color: #a1b9c6;
+  color: lightgray;
   font-size: 15px;
+  content: '\2605'; /* Full star in UTF8 */
   position: relative;
 }
 
@@ -8,15 +9,21 @@
   color: #e35a2e;
   content: '\2605'; /* Full star in UTF8 */
   position: absolute;
-  left: 0;
 }
 
 .star-icon.empty:before{
   color: lightgray;
   content: '\2605'; /* Full star in UTF8 */
   position: absolute;
-  left: 0;
 }
+
+/*.ability-set:hover #stars{*/
+  /*font-size: 18px;*/
+  /*width:15px;*/
+  /*height:10px;*/
+  /*overflow: visible;*/
+  /*float: right;*/
+/*}*/
 
 ul.no-bullets {
   list-style-type: none;

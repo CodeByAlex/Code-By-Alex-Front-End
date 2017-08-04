@@ -37,7 +37,7 @@
           <ul class="no-bullets" *ngFor="let lang of languages">
             <li>
               <span class="ability-title text-left">{{lang.abilityName}}:</span>
-              <span *ngFor="let i of getArray(5)" [ngClass]="(i> lang.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
+              <span id="stars" *ngFor="let i of getArray(5)" [ngClass]="(i> lang.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
             </li>
           </ul>
         </div>
