@@ -12,7 +12,7 @@
                 </div>
                 <h3>Front End<br>Development</h3>
                 <div class="fader">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
+                  <p class="service-box-text">Memorable experiences created using HTML, CSS, Javascript, and all of the frameworks</p>
                   <a href="#experience"><button (click)="switchSectionView(frontEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
                 </div>
               </div>
@@ -24,7 +24,7 @@
                 </div>
                 <h3>Back End<br>Development</h3>
                 <div class="fader">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
+                  <p class="service-box-text">Everything that you cant see but everything that orchestrates the functionality of your site</p>
                   <a href="#experience"><button (click)="switchSectionView(backEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
                 </div>
               </div>
@@ -36,7 +36,7 @@
                 </div>
                 <h3>User Experience<br>Design</h3>
                 <div class="fader">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, ducimus Lorem ipsum dolor sit amet.</p>
+                  <p class="service-box-text">Explosions of color and beautiful graphics that cause the user to take a step back in wonder</p>
                   <a href="#experience"><button (click)="switchSectionView(userExperience)" class="btn btn-medium btn-gray">Learn More</button></a>
                 </div>
               </div>
@@ -45,82 +45,36 @@
       </div>
       <div id="experience-types">
         <div id="experience-front-end" [ngClass]="expSection==frontEnd? 'fade-in':'fade-out'">
-          <div id = "exit1" class="text-right">
-            <a href="#experience">
-              <button (click)="switchSectionView(allExperience)">X</button>
-            </a>
+          <div class="row">
+            <h3 class="col-xs-10 col-sm-11 text-left">Front End</h3>
+            <a href="#experience" (click)="switchSectionView(allExperience)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
           </div>
-          <h3>Front End Work</h3>
-          <div *ngFor="let role of roles">
-            <hr>
-            <div class="row">
-              <div class="col-sm-2 col-xs-12 text-center">
-                <img src="{{role.imageLoc}}" class="comp-logo-size">
-              </div>
-              <div class="col-sm-3 text-center">
-                <div class="title-size">{{role.position}}</div>
-                <p>{{role.company}}</p>
-                <p>{{role.startDate}} - {{role.endDate}}</p>
-              </div>
-              <div class="col-sm-7">
-                <ul>
-                  <li *ngFor="let res of role.responsibilities">{{res}}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <hr>
+          - Worked on front end development for proposal exercises and assisted in the writing effort
         </div>
         <div id="experience-back-end" [ngClass]="expSection==backEnd? 'fade-in':'fade-out'">
-          <div id = "exit2" class="text-right">
-            <a href="#experience">
-              <button (click)="switchSectionView(allExperience)">X</button>
-            </a>
+          <div class="row">
+            <h3 class="col-xs-10 col-sm-11 text-left">Back End</h3>
+            <a href="#experience" (click)="switchSectionView(allExperience)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
           </div>
-          <h3>Back End Work</h3>
-          <div *ngFor="let role of roles">
-            <hr>
-            <div class="row">
-              <div class="col-sm-2 col-xs-12 text-center">
-                <img src="{{role.imageLoc}}" class="comp-logo-size">
-              </div>
-              <div class="col-sm-3 text-center">
-                <div class="title-size">{{role.position}}</div>
-                <p>{{role.company}}</p>
-                <p>{{role.startDate}} - {{role.endDate}}</p>
-              </div>
-              <div class="col-sm-7">
-                <ul>
-                  <li *ngFor="let res of role.responsibilities">{{res}}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <hr>
+          - Developed measures for the Quality Incentive Program as a part of the End Stage Renal Disease Quality Reporting System team under a CMS contract
+          <br>
+          - Introduced the use of an H2 database use with Fitnesse fixtures in QIP and gave trainings to both the test and development teams on how to use H2 alongside Fitnesse
+          <br>
+          - Developed complex portions of the Standardized Readmission Ratio calculation using Java, Hibernate, and SQL. Held code/criteria walkthroughs and provided input on calls with Arbor Research alongside business analysts
+          <br>
+          - Tested and analyzed code using various score validation efforts including discrepancy detection between two versions of calculated results
+          <br>
+          -Redesigned project elements to use utility classes for common calculations which reduced code complexity and increased accuracy, readability, and performance
+
         </div>
         <div id="experience-ux" [ngClass]="expSection==userExperience? 'fade-in':'fade-out'">
-          <div id = "exit3" class="text-right">
-            <a href="#experience">
-              <button (click)="switchSectionView(allExperience)">X</button>
-            </a>
+          <div class="row">
+            <h3 class="col-xs-10 col-sm-11 text-left">UX</h3>
+            <a href="#experience" (click)="switchSectionView(allExperience)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
           </div>
-          <h3>UX Work</h3>
-          <div *ngFor="let role of roles">
-            <hr>
-            <div class="row">
-              <div class="col-sm-2 col-xs-12 text-center">
-                <img src="{{role.imageLoc}}" class="comp-logo-size">
-              </div>
-              <div class="col-sm-3 text-center">
-                <div class="title-size">{{role.position}}</div>
-                <p>{{role.company}}</p>
-                <p>{{role.startDate}} - {{role.endDate}}</p>
-              </div>
-              <div class="col-sm-7">
-                <ul>
-                  <li *ngFor="let res of role.responsibilities">{{res}}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <hr>
         </div>
       </div>
     </div>

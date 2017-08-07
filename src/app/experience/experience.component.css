@@ -10,13 +10,14 @@
 
 .service_box{
   height:310px;
-  margin:41px 15px;
+  /*max-width: 300px;*/
+  margin:43px 15px;
   padding:30px 5px;
   text-align: center;
   /*border-radius:5px;*/
-  background: #89a0ae;
+  background: #7095ab;
   transition: all 0.30s ease 0s;
-  box-shadow: 4px 4px 5px grey;
+  box-shadow: 4px 4px 5px lightgrey;
 }
 
 .service_box:hover{
@@ -30,7 +31,6 @@
   background: #fff;
   line-height:70px;
   border-radius:50px;
-  transform: translateY(0);
   transition: all 0.30s ease 0s;
 }
 .service_box:hover .service_icon{
@@ -46,7 +46,6 @@
   color:#fff;
   font-size:23px;
   text-transform:uppercase;
-  transform: translateY(0%);
   transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
 }
 .service_box:hover h3{
@@ -63,6 +62,11 @@
   opacity:1;
 }
 
+.service-box-text{
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
 /* Buttons styles */
 input::-moz-focus-inner,
 button::-moz-focus-inner {
@@ -73,10 +77,14 @@ button::-moz-focus-inner {
 input[type="submit"].btn,
 button.btn {
   cursor: pointer;
-
 }
 
-a.btn,.btn {
+
+.btn-gray {
+  background: #808080;
+  color: #fff;
+  font-size: 0.9375em;
+  padding: 0.5375em 1.375em;
   display: inline-block;
   outline: none;
   *zoom: 1;
@@ -90,20 +98,6 @@ a.btn,.btn {
   transition: all 0.2s ease;
   box-sizing: border-box;
   text-shadow: 0 1px 0 rgba(0,0,0,0.01);
-}
-/* Radius */
-.btn-radius {
-  border-radius: 3px;
-}
-
-.btn-medium {
-  font-size: 0.9375em;
-  padding: 0.5375em 1.375em;
-}
-
-.btn-gray {
-  background: #808080;
-  color: #fff;
 }
 
 @keyframes fade-in-animation {
@@ -150,4 +144,54 @@ a.btn,.btn {
     display: inherit;
     opacity:1;
   }
+}
+
+.exit {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  right: 0;
+  top: 0;
+  width: 27px;
+  height: 27px;
+  transition: transform .25s ease-in-out;
+}
+.exit:hover {
+  transform: rotate(180deg);
+}
+.exit:before {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  height: 0;
+  border-top: 1px solid black;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+.exit:after {
+  content: "";
+  position: absolute;
+  display: block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  height: 0;
+  border-top: 1px solid black;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+a{
+  text-decoration: none;
 }
