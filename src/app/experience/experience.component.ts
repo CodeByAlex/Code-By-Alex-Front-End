@@ -23,7 +23,7 @@ export class ExperienceComponent implements OnInit {
           "Tested and analyzed code using various score validation efforts including discrepancy detection between two versions of calculated results",
           "Redesigned project elements to use utility classes for common calculations which reduced code complexity and increased accuracy, readability, and performance"],
         "./../../assets/edaptive-logo.jpeg"),
-      new CompanyRole("Research & Development Software Engineer Intern", "G2 Inc.", "May 2015", "Oct 2015",
+      new CompanyRole("R & D Software Engineer Intern", "G2 Inc.", "May 2015", "Oct 2015",
         ["Worked on front end development for proposal exercises and assisted in the writing effort",
           "Developed measures for the Quality Incentive Program as a part of the End Stage Renal Disease Quality Reporting System team under a CMS contract",
           "Completed a proof of concept for H2 database use with Fitnesse fixtures in QIP and gave trainings to both the test and development teams on how to use H2 alongside Fitnesse"],
