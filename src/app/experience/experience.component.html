@@ -5,40 +5,34 @@
             Experience
           </h1>
           <div class="row">
-            <div class="col-md-4 col-sm-12" [ngClass]="focusedElement =='front-end-service-box'? 'mobile-hover':''">
+            <div class="col-xs-12 col-sm-12 col-md-4" [ngClass]="focusedElement =='front-end-service-box'? 'mobile-hover':''">
               <div id="front-end-service-box" class="service_box">
                 <div class="service_icon">
                   <i class="fa fa-code"></i>
                 </div>
                 <h3>Front End<br>Development</h3>
-                <div class="fader">
-                  <p class="service-box-text">Memorable experiences created using HTML, CSS, Javascript, and all of the frameworks</p>
-                  <a href="#experience"><button (click)="switchSectionView(frontEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
-                </div>
+                <p class="service-box-text">Memorable experiences created using HTML, CSS, Javascript, and all of the frameworks</p>
+                <a href="#experience"><button (click)="switchSectionView(frontEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
               </div>
             </div>
-            <div class="col-md-4 col-sm-12" [ngClass]="focusedElement =='back-end-service-box'? 'mobile-hover':''" >
+            <div class="col-xs-12 col-sm-12 col-md-4" [ngClass]="focusedElement =='back-end-service-box'? 'mobile-hover':''" >
               <div id="back-end-service-box" class="service_box">
                 <div class="service_icon">
                   <i class="fa fa-database"></i>
                 </div>
                 <h3>Back End<br>Development</h3>
-                <div class="fader">
-                  <p class="service-box-text">Everything that you cant see but everything that orchestrates the functionality of your site</p>
-                  <a href="#experience"><button (click)="switchSectionView(backEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
-                </div>
+                <p class="service-box-text">Everything that you cant see but everything that orchestrates the functionality of your site</p>
+                <a href="#experience"><button (click)="switchSectionView(backEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
               </div>
             </div>
-            <div class="col-md-4 col-sm-12" [ngClass]="focusedElement =='ux-service-box'? 'mobile-hover':''" >
+            <div class="col-xs-12 col-sm-12 col-md-4" [ngClass]="focusedElement =='ux-service-box'? 'mobile-hover':''" >
               <div id="ux-service-box" class="service_box">
                 <div class="service_icon">
                   <i class="fa fa-user"></i>
                 </div>
                 <h3>User Experience<br>Design</h3>
-                <div class="fader">
-                  <p class="service-box-text">Explosions of color and beautiful graphics that cause the user to take a step back in wonder</p>
-                  <a href="#experience"><button (click)="switchSectionView(userExperience)" class="btn btn-medium btn-gray">Learn More</button></a>
-                </div>
+                <p class="service-box-text">Beautiful graphics, layout, and color that cause the user to take a step back in wonder</p>
+                <a href="#experience"><button (click)="switchSectionView(userExperience)" class="btn btn-medium btn-gray">Learn More</button></a>
               </div>
             </div>
         </div>
