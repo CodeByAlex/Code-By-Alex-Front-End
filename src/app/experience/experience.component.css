@@ -99,7 +99,34 @@
     transform: scale(1.05);
   }
 }
+
 .exit {
+  /* background: teal; */
+  width: 60px;
+  height: 60px;
+  position: relative;
+  padding-top: 15px;
+}
+.exit:after {
+  content: '';
+  height: 30px;
+  border-left: 2px solid black;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 28px;
+}
+
+.exit:before {
+  content: '';
+  height: 30px;
+  border-left: 2px solid black;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 28px;
+}
+
+
+/*.exit {
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 30px;
@@ -143,7 +170,8 @@
   border-top: 1px solid black;
   transform: rotate(-45deg);
   transform-origin: center;
-}
+}*/
+
 a {
   text-decoration: none;
 }

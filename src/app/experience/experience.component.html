@@ -31,7 +31,7 @@
                   <i class="fa fa-user"></i>
                 </div>
                 <h3>User Experience<br>Design</h3>
-                <p class="service-box-text">Beautiful graphics, layout, and color that cause the user to take a step back in wonder</p>
+                <p class="service-box-text">Beautiful graphics, layout, and color causes the user to forget that they are looking at a screen</p>
                 <a href="#experience"><button (click)="switchSectionView(userExperience)" class="btn btn-medium btn-gray">Learn More</button></a>
               </div>
             </div>
@@ -40,32 +40,67 @@
       <div id="experience-types">
         <div id="experience-front-end" [ngClass]="expSection==frontEnd? 'fade-in':'fade-out'">
           <div class="row">
-            <h3 class="col-xs-10 col-sm-11 text-left">Front End</h3>
+            <h3 class="col-xs-9 col-sm-11 text-left">Front End</h3>
             <a href="#experience" (click)="switchSectionView(allExperience)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
           </div>
           <hr>
-          - Worked on front end development for proposal exercises and assisted in the writing effort
+
+          <div class="col-xs-12">
+            <h4>Bellese Business Development Proposal </h4>
+            <p><b>Skillset:</b> HTML, CSS<br>
+              <b>Company:</b> Bellese Technologies</p>
+            <ul>
+              <li>Worked on front end for proposal exercises and assisted in the writing effort</li>
+              <li>Utilized the Bootstrap library for the grid layout and basic styling</li>
+              <li>Designed the web page with inspiration from the styles created by the United States Web Design Standards</li>
+            </ul>
+          </div>
+
         </div>
         <div id="experience-back-end" [ngClass]="expSection==backEnd? 'fade-in':'fade-out'">
           <div class="row">
-            <h3 class="col-xs-10 col-sm-11 text-left">Back End</h3>
+            <h3 class="col-xs-9 col-sm-11 text-left">Back End</h3>
             <a href="#experience" (click)="switchSectionView(allExperience)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
           </div>
           <hr>
-          - Developed measures for the Quality Incentive Program as a part of the End Stage Renal Disease Quality Reporting System team under a CMS contract
-          <br>
-          - Introduced the use of an H2 database use with Fitnesse fixtures in QIP and gave trainings to both the test and development teams on how to use H2 alongside Fitnesse
-          <br>
-          - Developed complex portions of the Standardized Readmission Ratio calculation using Java, Hibernate, and SQL. Held code/criteria walkthroughs and provided input on calls with Arbor Research alongside business analysts
-          <br>
-          - Tested and analyzed code using various score validation efforts including discrepancy detection between two versions of calculated results
-          <br>
-          -Redesigned project elements to use utility classes for common calculations which reduced code complexity and increased accuracy, readability, and performance
+          <div class="col-xs-12">
+            <h4>ESRD Quality Reporting System for CMS, Facilities Release</h4>
+            <p><b>Skillset:</b> Java, Spring Boot, SQL, Liquibase <br>
+            <b>Company:</b> Bellese Technologies</p>
+            <ul>
+              <li>Developed the microservice layer using the a three tier design structure: application zone, data zone, ...  </li>
+              <li>Created liquibase scripts for a transition from using an Oracle Database to a Postgresql Database</li>
+            </ul>
 
+            <br>
+
+            <h4>ESRD Quality Incentive Program for CMS</h4>
+            <p><b>Skillset:</b> Java, Spring Hibernate, SQL<br>
+            <b>Company:</b> Edaptive Systems/ Bellese Technologies</p>
+            <ul>
+              <li>Developed complex algorithms used to measure the quality of facilities treating patients with end stage renal disease</li>
+              <li>Introduced the use of an H2 database to the development team for the database agnostic testing of sql queries</li>
+              <li>Worked with Arbor Research alongside business analysts to design the software based on given criteria</li>
+              <li>Tested and analyzed code using various score validation efforts including discrepancy detection between two versions of calculated results</li>
+              <li>Redesigned project elements to use utility classes for common calculations which reduced code complexity and increased accuracy, readability, and performance</li>
+            </ul>
+
+            <br>
+
+            <h4>Scheduling and Path Planning for Computational Ferrying Research Project</h4>
+            <p><b>Skillset:</b> Python, Latex<br>
+            <b>Company:</b> G2 Inc.</p>
+            <ul>
+              <li>Developed scheduling and planning algorithms to create optimal task completion order for mobile high performance computers</li>
+              <li>Created a computer simulation using Python UI libraries</li>
+              <li>Collected data from the simulation to prove our research hypothesis on the innovative usage of path-finding and automation</li>
+              <li>Co-authored workshop paper describing our findings that was accepted for the 2016 IEEE Military Communications Conference and published in IEEE</li>
+            </ul>
+          </div>
         </div>
         <div id="experience-ux" [ngClass]="expSection==userExperience? 'fade-in':'fade-out'">
           <div class="row">
-            <h3 class="col-xs-10 col-sm-11 text-left">UX</h3>
+            <h3 class="col-xs-9 col-sm-11 text-left">UX</h3>
             <a href="#experience" (click)="switchSectionView(allExperience)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
           </div>
           <hr>
@@ -73,21 +108,3 @@
       </div>
     </div>
 </div>
-<!--<div *ngFor="let role of roles">
-<hr>
-<div class="row">
-  <div class="col-sm-2 col-xs-12 text-center">
-    <img src="{{role.imageLoc}}" class="comp-logo-size">
-  </div>
-  <div class="col-sm-3 text-center">
-    <div class="title-size">{{role.position}}</div>
-    <p>{{role.company}}</p>
-    <p>{{role.startDate}} - {{role.endDate}}</p>
-  </div>
-  <div class="col-sm-7">
-    <ul>
-      <li *ngFor="let res of role.responsibilities">{{res}}</li>
-    </ul>
-  </div>
-</div>
-</div>-->
