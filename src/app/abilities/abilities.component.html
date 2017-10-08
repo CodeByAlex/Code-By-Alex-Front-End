@@ -42,10 +42,20 @@
           </ul>
         </div>
 
-        <div class="col-xs-12
+        <!--<div class="col-xs-12
                     col-md-6">
           <h4>Testing</h4>
           <ul class="no-bullets" *ngFor="let tool of testTools">
+            <li>
+              <span class="ability-title text-left">{{tool.abilityName}}:</span>
+              <span *ngFor="let i of getArray(5)" [ngClass]="(i> tool.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
+            </li>
+          </ul>
+        </div>-->
+        <div class="col-xs-12
+                    col-md-6">
+          <h4>Tools</h4>
+          <ul class="no-bullets" *ngFor="let tool of devTools">
             <li>
               <span class="ability-title text-left">{{tool.abilityName}}:</span>
               <span *ngFor="let i of getArray(5)" [ngClass]="(i> tool.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
@@ -100,6 +110,16 @@
 
         <div class="col-xs-12
                     col-md-6">
+          <h4>Testing</h4>
+          <ul class="no-bullets" *ngFor="let tool of testTools">
+            <li>
+              <span class="ability-title text-left">{{tool.abilityName}}:</span>
+              <span *ngFor="let i of getArray(5)" [ngClass]="(i> tool.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
+            </li>
+          </ul>
+        </div>
+        <!--<div class="col-xs-12
+                    col-md-6">
           <h4>Tools</h4>
           <ul class="no-bullets" *ngFor="let tool of devTools">
             <li>
@@ -107,7 +127,7 @@
               <span *ngFor="let i of getArray(5)" [ngClass]="(i> tool.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
             </li>
           </ul>
-        </div>
+        </div>-->
 
       </div>
     </div>
