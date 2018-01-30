@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-.section {
+.section-style {
   background-size: cover;
   min-height: 100vh;
   height: auto;
-  padding-bottom: 35px;
-  padding-top: 35px;
+  padding-bottom: 50px;
+  padding-top: 50px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;

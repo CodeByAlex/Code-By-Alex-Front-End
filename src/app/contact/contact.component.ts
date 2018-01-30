@@ -1,8 +1,7 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ContactInfo} from "./contactInfo";
-import {EmailService} from "./email.service";
-import {ComponentTrackingService} from "../component-tracking.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ContactInfo} from './contactInfo';
+import {EmailService} from './email.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +13,7 @@ export class ContactComponent implements OnInit {
   submitted = false;
   contactForm: FormGroup;
 
-  constructor(private emailService: EmailService, private componentTracker: ComponentTrackingService, private formBuilder: FormBuilder) {
+  constructor(private emailService: EmailService, private formBuilder: FormBuilder) {
     this.contactForm = this.formBuilder.group({
       'contact-name': ['', Validators.required],
       'contact-email': ['', Validators.compose([Validators.required, Validators.email])],
@@ -29,10 +28,14 @@ export class ContactComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    let phoneNumber = '';
+    if (this.contactForm.get('contact-phone-number').value) {
+      phoneNumber = this.contactForm.get('contact-phone-number').value.replace(/\D+/g, '');
+    }
     const newContact: ContactInfo = new ContactInfo(
       this.contactForm.get('contact-name').value,
       this.contactForm.get('contact-email').value,
-      this.contactForm.get('contact-phone-number').value.replace(/\D+/g, ''),
+      phoneNumber,
       this.contactForm.get('contact-message').value);
     this.sendMail(newContact);
     this.contactForm.reset();
@@ -52,11 +55,7 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  changePhoneModel(val: number) {
+  changePhoneModel(val: string) {
     this.contactInfo.phone = val;
   }
-
-  @HostListener('mouseover') onMouseOver() {
-    this.componentTracker.setNewFocus('contact');
-  };
 }
