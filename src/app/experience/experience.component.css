@@ -8,10 +8,10 @@
 }
 .service_box {
   height: 310px;
-  max-width: 400px;
   margin: 43px 15px;
   padding: 30px 5px;
   text-align: center;
+  vertical-align:middle;
   color: white;
   background: #7095ab;
   transition: all 0.30s ease 0s;
@@ -124,53 +124,6 @@
   transform: rotate(-45deg);
   left: 28px;
 }
-
-
-/*.exit {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 30px;
-  display: block;
-  position: relative;
-  right: 0;
-  top: 0;
-  width: 27px;
-  height: 27px;
-  transition: transform .25s ease-in-out;
-}
-.exit:hover {
-  transform: rotate(180deg);
-}
-.exit:before {
-  content: "";
-  position: absolute;
-  display: block;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 32px;
-  height: 0;
-  border-top: 1px solid black;
-  transform: rotate(45deg);
-  transform-origin: center;
-}
-.exit:after {
-  content: "";
-  position: absolute;
-  display: block;
-  margin: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 32px;
-  height: 0;
-  border-top: 1px solid black;
-  transform: rotate(-45deg);
-  transform-origin: center;
-}*/
 
 a {
   text-decoration: none;

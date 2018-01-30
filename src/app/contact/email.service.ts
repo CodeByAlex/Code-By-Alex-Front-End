@@ -13,17 +13,15 @@ export class EmailService {
   }
 
   sendEmail(message: ContactInfo): Observable<ContactInfo> | any {
-    console.log(this.contactEndpoint);
-
     return this.http.post(this.contactEndpoint, message)
       .map(response => {
-        console.log('Sending email was successfull', response);
+        console.log('Sending email was successful', response);
         return response;
       })
       .catch(error => {
         console.log('Sending email received error', error);
-        return Observable.throw(error)
-      })
+        return Observable.throw(error);
+      });
   }
 
 }

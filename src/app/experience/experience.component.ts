@@ -8,7 +8,6 @@ import {ElementFinderService} from '../element-finder.service';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent {
-  roles: Array<CompanyRole>;
   expSection = 0;
   frontEnd = 1;
   backEnd = 2;
@@ -27,6 +26,5 @@ export class ExperienceComponent {
     const elements: Element[] = this.el.nativeElement.querySelectorAll('.service_box');
 
     this.focusedElement = this.elementFinderService.findlargestElementinView(elements);
-    console.log(this.focusedElement);
   }
 }
