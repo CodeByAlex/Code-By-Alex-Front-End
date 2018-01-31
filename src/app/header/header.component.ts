@@ -7,7 +7,8 @@ import {WindowService} from '../window.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent{
+export class HeaderComponent {
+  @ViewChildren('link') links: QueryList<ElementRef>;
   @Input() focusedSection;
   isIn = false;
   vertPosition = 0;
@@ -32,12 +33,14 @@ export class HeaderComponent{
     return this.prevVertPosition < this.vertPosition;
   }
 
-  isSectionInView(id: string) {
-    return id === this.focusedSection;
-  }
-
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
     this.prevVertPosition = this.vertPosition;
     this.vertPosition = this.windowService.getCurrentYPosition();
+    this.links.forEach(link => {
+      if (link.nativeElement.id.includes(this.focusedSection)){
+        link.nativeElement.focus(true);
+        console.log(link.nativeElement.id);
+      }
+    });
   }
 }
