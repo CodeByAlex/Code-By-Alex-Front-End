@@ -75,7 +75,7 @@ export class SmoothScrollService {
 function getElmYPosition(eID) {
   const elm = document.getElementById(eID);
   let y = elm.offsetTop;
-  let node = elm;
+  const node = elm;
   while (node.offsetParent && node.offsetParent != document.body) {
     this.node = node.offsetParent;
     y += node.offsetTop;

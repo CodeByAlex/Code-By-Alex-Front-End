@@ -16,7 +16,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
-    this.focusedSection = this.elementFinderService.findSectioninView(this.sections);
+    this.focusedSection = this.elementFinderService.findSectionInView(this.sections);
   }
 
 }

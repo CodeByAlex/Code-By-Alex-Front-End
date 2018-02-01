@@ -1,10 +1,10 @@
-import {ElementRef, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class ElementFinderService {
   constructor() {}
 
-  findSectioninView(sections: Element[]) {
+  findSectionInView(sections: Element[]) {
     for (const section of sections){
       const topWindowPos = window.screenY;
       const windowBottomPos = topWindowPos + window.screen.height;
@@ -17,33 +17,54 @@ export class ElementFinderService {
     }
   }
 
-  findlargestElementinView(elements: Element[]) {
-    let chosenElement = '';
+  findlargestElementInView(elements: Element[]) {
+    let chosenElement = null;
     let elementHeightInView = 0;
     for (const element of elements) {
       const topWindowPos = window.screenY;
       const windowBottomPos = topWindowPos + window.screen.height;
 
-      if (element.getBoundingClientRect().top > topWindowPos
-        && element.getBoundingClientRect().bottom < windowBottomPos) { // In full view
-        if (chosenElement == '' || element.getBoundingClientRect().bottom - element.getBoundingClientRect().top > elementHeightInView) {
+      if (this.isElementInFullView(element)) {
+        if (!chosenElement || element.getBoundingClientRect().bottom - element.getBoundingClientRect().top > elementHeightInView) {
           chosenElement = element.id;
           elementHeightInView = element.getBoundingClientRect().bottom - element.getBoundingClientRect().top;
         }
-      } else if (element.getBoundingClientRect().top < topWindowPos
-        && element.getBoundingClientRect().bottom < windowBottomPos) { // Partially out of view from top
-        if (chosenElement == '' || element.getBoundingClientRect().bottom - topWindowPos > elementHeightInView) {
+      } else if (this.isElementTopOutOfView(element)) {
+        if (!chosenElement || element.getBoundingClientRect().bottom - topWindowPos > elementHeightInView) {
           chosenElement = element.id;
           elementHeightInView = element.getBoundingClientRect().bottom - topWindowPos;
         }
-      } else if (element.getBoundingClientRect().top > topWindowPos
-        && element.getBoundingClientRect().bottom > windowBottomPos) { // Partially out of view from bottom
-        if (chosenElement == '' || windowBottomPos - element.getBoundingClientRect().top > elementHeightInView) {
+      } else if (this.isElementBottomOutOfView(element)) { // Partially out of view from bottom
+        if (!chosenElement || windowBottomPos - element.getBoundingClientRect().top > elementHeightInView) {
           chosenElement = element.id;
           elementHeightInView = windowBottomPos - element.getBoundingClientRect().top;
         }
       }
     }
     return chosenElement;
+  }
+
+  isElementInFullView(element: Element): boolean {
+    if (element.getBoundingClientRect().top > window.screenY
+      && element.getBoundingClientRect().bottom < (window.screenY + window.screen.height)) {
+        return true;
+    }
+    return false;
+  }
+
+  isElementTopOutOfView(element: Element) {
+    if (element.getBoundingClientRect().top < window.screenY
+      && element.getBoundingClientRect().bottom < (window.screenY + window.screen.height)) {
+        return true;
+    }
+    return false;
+  }
+
+  isElementBottomOutOfView(element: Element) {
+    if (element.getBoundingClientRect().top > window.screenY
+      && element.getBoundingClientRect().bottom > (window.screenY + window.screen.height)) {
+      return true;
+    }
+    return false;
   }
 }

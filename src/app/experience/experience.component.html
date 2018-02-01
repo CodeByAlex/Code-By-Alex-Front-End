@@ -1,6 +1,6 @@
 <div id="experience" class="section-style overlay-white">
     <div class="container">
-      <div id="experience-default" [ngClass]="expSection==allExperience? 'fade-in':'fade-out'">
+      <div id="experience-default" [ngClass]="currentIndex==ALL_EXPERIENCE_INDEX? 'fade-in':'fade-out'">
           <h1 class="text-center">
             Experience
           </h1>
@@ -12,7 +12,7 @@
                   </div>
                   <h3>Front End<br>Development</h3>
                   <p class="service-box-text">Memorable experiences created using HTML, CSS, and Javascript</p>
-                  <a href="#experience"><button (click)="switchSectionView(frontEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
+                  <a href="#experience"><button (click)="switchSectionView(FRONT_END_SECTION_INDEX)" class="btn btn-medium btn-gray">Learn More</button></a>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4" [ngClass]="focusedElement =='back-end-service-box'? 'mobile-hover':''" >
@@ -22,7 +22,7 @@
                 </div>
                 <h3>Back End<br>Development</h3>
                 <p class="service-box-text">Everything that you cant see which orchestrates the functionality of your website</p>
-                <a href="#experience"><button (click)="switchSectionView(backEnd)" class="btn btn-medium btn-gray">Learn More</button></a>
+                <a href="#experience"><button (click)="switchSectionView(BACK_END_SECTION_INDEX)" class="btn btn-medium btn-gray">Learn More</button></a>
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4" [ngClass]="focusedElement =='ux-service-box'? 'mobile-hover':''" >
@@ -32,16 +32,16 @@
                 </div>
                 <h3>User Interface <br>Design</h3>
                 <p class="service-box-text">Research backed designs that cause the user to forget that they are looking at a screen</p>
-                <a href="#experience"><button (click)="switchSectionView(userExperience)" class="btn btn-medium btn-gray">Learn More</button></a>
+                <a href="#experience"><button (click)="switchSectionView(UX_SECTION_INDEX)" class="btn btn-medium btn-gray">Learn More</button></a>
               </div>
             </div>
         </div>
       </div>
       <div id="experience-types">
-        <div id="experience-front-end" [ngClass]="expSection==frontEnd? 'fade-in':'fade-out'">
+        <div id="experience-front-end" [ngClass]="currentIndex==FRONT_END_SECTION_INDEX? 'fade-in':'fade-out'">
           <div class="row">
             <h3 class="col-xs-9 col-sm-11 text-left">Front End</h3>
-            <a href="#experience" (click)="switchSectionView(allExperience)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
+            <a href="#experience" (click)="switchSectionView(ALL_EXPERIENCE_INDEX)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
           </div>
           <hr>
 
@@ -69,10 +69,10 @@
           </div>
 
         </div>
-        <div id="experience-back-end" [ngClass]="expSection==backEnd? 'fade-in':'fade-out'">
+        <div id="experience-back-end" [ngClass]="currentIndex==BACK_END_SECTION_INDEX? 'fade-in':'fade-out'">
           <div class="row">
             <h3 class="col-xs-9 col-sm-11 text-left">Back End</h3>
-            <a href="#experience" (click)="switchSectionView(allExperience)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
+            <a href="#experience" (click)="switchSectionView(ALL_EXPERIENCE_INDEX)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
           </div>
           <hr>
           <div class="col-xs-12">
@@ -110,10 +110,10 @@
             </ul>
           </div>
         </div>
-        <div id="experience-ux" [ngClass]="expSection==userExperience? 'fade-in':'fade-out'">
+        <div id="experience-ux" [ngClass]="currentIndex==UX_SECTION_INDEX? 'fade-in':'fade-out'">
           <div class="row">
             <h3 class="col-xs-9 col-sm-11 text-left">User Interface Design</h3>
-            <a href="#experience" (click)="switchSectionView(allExperience)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
+            <a href="#experience" (click)="switchSectionView(ALL_EXPERIENCE_INDEX)" class="col-xs-2 col-sm-1"><div class="exit"></div></a>
           </div>
           <div class="col-xs-12">
             <h4>ESRD Quality Reporting System for CMS, Facilities Release</h4>
