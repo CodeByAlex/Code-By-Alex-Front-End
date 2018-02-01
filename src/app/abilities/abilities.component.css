@@ -17,14 +17,6 @@
   position: absolute;
 }
 
-/*.ability-set:hover #stars{*/
-  /*font-size: 18px;*/
-  /*width:15px;*/
-  /*height:10px;*/
-  /*overflow: visible;*/
-  /*float: right;*/
-/*}*/
-
 ul.no-bullets {
   list-style-type: none;
   margin: 0px;
