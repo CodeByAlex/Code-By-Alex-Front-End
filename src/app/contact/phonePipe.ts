@@ -1,8 +1,4 @@
-/**
- * Created by alexanderwilson on 6/20/17.
- */
-
-import {Pipe, PipeTransform} from "@angular/core";
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'phone'
@@ -45,7 +41,7 @@ export class PhonePipe implements PipeTransform {
 
     number = number.slice(0, 3) + '-' + number.slice(3);
 
-    return (country + " (" + city + ") " + number).trim();
+    return (country + ' (' + city + ') ' + number).trim();
   }
 
   parse(value: string): string {

@@ -6,26 +6,20 @@ import {PhonePipe} from './phonePipe';
 })
 export class PhoneFormatterDirective implements OnInit{
 
-  private el: HTMLInputElement;
-
-  constructor(
-    private elementRef: ElementRef,
-    private phonePipe: PhonePipe
-  ) {
-    this.el = this.elementRef.nativeElement;
+  constructor(private elementRef: ElementRef, private phonePipe: PhonePipe) {
   }
 
   ngOnInit() {
-    this.el.value = this.phonePipe.transform(this.el.value);
+    this.elementRef.nativeElement.value = this.phonePipe.transform(this.elementRef.nativeElement.value);
   }
 
   @HostListener('focus', ['$event.target.value'])
   onFocus(value) {
-    this.el.value = this.phonePipe.parse(value);
+    this.elementRef.nativeElement.value = this.phonePipe.parse(value);
   }
 
   @HostListener('blur', ['$event.target.value'])
   onBlur(value) {
-    this.el.value = this.phonePipe.transform(value);
+    this.elementRef.nativeElement.value = this.phonePipe.transform(value);
   }
 }

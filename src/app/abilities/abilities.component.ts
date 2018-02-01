@@ -22,8 +22,8 @@ export class AbilitiesComponent {
     this.abilitySection = [this.languages, this.frameworks, this.testTools, this.databases, this.operatingSys, this.devTools];
 
     this.languages = [
-      new Ability('Languages', 'Java', 5),
-      new Ability('Languages', 'HTML', 5),
+      new Ability('Languages', 'Java', 4),
+      new Ability('Languages', 'HTML', 4),
       new Ability('Languages', 'CSS', 4),
       new Ability('Languages', 'Typescript', 4),
       new Ability('Languages', 'SQL', 3),

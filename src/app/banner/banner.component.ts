@@ -10,8 +10,8 @@ export class BannerComponent {
 
   constructor(private ss: SmoothScrollService) { }
 
-  scroll(eid, event) {
+  scrollToSection(sectionId, event) {
     event.preventDefault();
-    this.ss.smoothScroll(eid);
+    this.ss.smoothScroll(sectionId);
   }
 }

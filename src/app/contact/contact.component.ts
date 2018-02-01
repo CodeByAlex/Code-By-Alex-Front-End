@@ -47,9 +47,6 @@ export class ContactComponent implements OnInit {
   sendMail(newContact: ContactInfo) {
     this.emailService.sendEmail(newContact).subscribe(res => {
       console.log('Email Success', res);
-      console.log('Email Sent: Name - ' + newContact.name + ', Email - ' + newContact.email +
-        ', Phone Number - ' + newContact.phone +
-        ', Message - ' + newContact.message);
     }, error => {
       console.log('Email Error', error);
     });

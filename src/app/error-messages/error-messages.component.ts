@@ -8,26 +8,25 @@ import {FormControl} from "@angular/forms";
 })
 export class ErrorMessagesComponent {
   @Input() control: FormControl;
-
-  constructor() { }
+  config: any;
+  constructor() {
+    this.config = {
+      'required': 'Required',
+      'email': 'Invalid email address'
+    };
+  }
 
   get errorMessage(){
     for (const propertyName in this.control.errors) {
       if (this.control.errors.hasOwnProperty(propertyName) && this.control.touched) {
-        return this.getValidatorErrorMessage(propertyName, this.control.errors[propertyName]);
+        return this.getValidatorErrorMessage(propertyName);
       }
     }
     return null;
   }
 
-  getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
-    const config = {
-      'required': 'Required',
-      'email': 'Invalid email address',
-      'minlength': `Minimum length ${validatorValue.requiredLength}`
-    };
-
-    return config[validatorName];
+  getValidatorErrorMessage(validatorName: string) {
+    return this.config[validatorName];
   }
 
 }
