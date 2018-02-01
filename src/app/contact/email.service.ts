@@ -6,9 +6,12 @@ import {ConfigurationService} from "../config/configuration.service";
 
 @Injectable()
 export class EmailService {
-  contactEndpoint:string;
+  CONTACT_ENDPOINT_CONFIG = 'ContactEndpoint';
+
+  contactEndpoint: string;
+
   constructor(private http: Http, configService: ConfigurationService) {
-    configService.getConfiguration("ContactEndpoint").subscribe((result) => this.contactEndpoint = result);
+    configService.getConfiguration(this.CONTACT_ENDPOINT_CONFIG).subscribe((result) => this.contactEndpoint = result);
   }
 
   sendEmail(message: ContactInfo): Observable<ContactInfo> | any {
