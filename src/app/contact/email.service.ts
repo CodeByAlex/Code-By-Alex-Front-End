@@ -8,7 +8,6 @@ import {ConfigurationService} from "../config/configuration.service";
 export class EmailService {
   contactEndpoint:string;
   constructor(private http: Http, configService: ConfigurationService) {
-    console.log("Reading ConfigurationService");
     configService.getConfiguration("ContactEndpoint").subscribe((result) => this.contactEndpoint = result);
   }
 

@@ -1,6 +1,5 @@
 import {Component, ElementRef, HostListener, Input, OnInit, QueryList, ViewChildren} from '@angular/core';
 import {SmoothScrollService} from '../smooth-scroll.service';
-import {WindowService} from '../window.service';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +10,11 @@ export class HeaderComponent {
   @ViewChildren('link') links: QueryList<ElementRef>;
   @Input() focusedSection;
   isIn = false;
-  vertPosition = 0;
-  prevVertPosition = 0;
+  prevPosition = 0;
+  isScrollDown = false;
 
-  constructor(private ss: SmoothScrollService, private windowService: WindowService, private _elementRef: ElementRef) { }
+
+  constructor(private ss: SmoothScrollService) { }
 
   toggleState() {
     this.isIn = this.isIn === false ? true : false;
@@ -24,22 +24,17 @@ export class HeaderComponent {
     this.isIn = false;
   }
 
-  scroll(eid, event) {
+  scrollToSection(sectionId, event) {
     event.preventDefault();
-    this.ss.smoothScroll(eid);
-  }
-
-  isScrollDown() {
-    return this.prevVertPosition < this.vertPosition;
+    this.ss.smoothScroll(sectionId);
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
-    this.prevVertPosition = this.vertPosition;
-    this.vertPosition = this.windowService.getCurrentYPosition();
+    this.isScrollDown = this.prevPosition < this.ss.getCurrentYPosition();
+    this.prevPosition = this.ss.getCurrentYPosition();
     this.links.forEach(link => {
-      if (link.nativeElement.id.includes(this.focusedSection)){
+      if (link.nativeElement.id.includes(this.focusedSection)) {
         link.nativeElement.focus(true);
-        console.log(link.nativeElement.id);
       }
     });
   }

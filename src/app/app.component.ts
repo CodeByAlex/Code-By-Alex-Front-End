@@ -6,13 +6,10 @@ import {ElementFinderService} from "./element-finder.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit{
-  link: string;
+export class AppComponent implements AfterViewInit {
   focusedSection: string;
   sections: Element[] = [];
-  constructor(private el: ElementRef, private elementFinderService: ElementFinderService ) {
-    this.link = '-link';
-  }
+  constructor(private el: ElementRef, private elementFinderService: ElementFinderService ) {}
 
   ngAfterViewInit() {
     this.sections = this.el.nativeElement.querySelectorAll('.section');
