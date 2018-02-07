@@ -25,7 +25,7 @@
 </nav>
 
 <div>
-  <div href="#home" (click)="scrollToSection('home', $event)" [ngClass]="(vertPosition<=180)?'return-to-top fade-out disable ':'return-to-top fade-in'">
+  <div href="#home" (click)="scrollToSection('home', $event)" [ngClass]="(prevPosition<=180)?'return-to-top fade-out disable ':'return-to-top fade-in'">
     <i class="glyphicon glyphicon-chevron-up"></i>
   </div>
 </div>
