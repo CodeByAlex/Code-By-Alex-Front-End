@@ -15,7 +15,6 @@
             <input type="text"
                    id="contact-name"
                    class="form-control"
-                   [ngModel]="contactInfo.name"
                    formControlName="contact-name"
                    placeholder="What your friends call you...">
             <app-error-messages [control]="contactForm.controls['contact-name']"></app-error-messages>
@@ -27,7 +26,6 @@
             <input type="email"
                    id="contact-email"
                    class="form-control"
-                   [ngModel]="contactInfo.email"
                    formControlName="contact-email"
                    placeholder="YourEmail@email.com">
             <app-error-messages [control]="contactForm.controls['contact-email']"></app-error-messages>
@@ -44,8 +42,7 @@
                    [ngModel]="contactInfo.phone"
                    formControlName="contact-phone-number"
                    placeholder="(xxx) xxx-xxxx"
-                   maxlength="12"
-                   >
+                   maxlength="12">
           </div>
         </div>
         <div class="row">
@@ -55,7 +52,6 @@
                       type="text"
                       id="contact-message"
                       class="form-control"
-                      [ngModel] ="contactInfo.message"
                       formControlName="contact-message"
                       placeholder="What brings you here?"></textarea>
             <app-error-messages [control]="contactForm.controls['contact-message']"></app-error-messages>

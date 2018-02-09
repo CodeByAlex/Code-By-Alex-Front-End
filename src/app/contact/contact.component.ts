@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ContactInfo} from './contactInfo';
 import {EmailService} from './email.service';
@@ -27,26 +27,28 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-    let phoneNumber = '';
-    if (this.contactForm.get('contact-phone-number').value) {
-      phoneNumber = this.contactForm.get('contact-phone-number').value.replace(/\D+/g, '');
+    if (this.contactForm.valid) {
+      let phoneNumber = '';
+      if (this.contactForm.get('contact-phone-number').value) {
+        phoneNumber = this.contactForm.get('contact-phone-number').value.replace(/\D+/g, '');
+      }
+      const newContact: ContactInfo = new ContactInfo(
+        this.contactForm.get('contact-name').value,
+        this.contactForm.get('contact-email').value,
+        phoneNumber,
+        this.contactForm.get('contact-message').value);
+      this.sendMail(newContact);
+      this.contactForm.reset();
     }
-    const newContact: ContactInfo = new ContactInfo(
-      this.contactForm.get('contact-name').value,
-      this.contactForm.get('contact-email').value,
-      phoneNumber,
-      this.contactForm.get('contact-message').value);
-    this.sendMail(newContact);
-    this.contactForm.reset();
-    setTimeout(() => {
-      this.submitted = false;
-    }, 5000);
   }
 
   sendMail(newContact: ContactInfo) {
     this.emailService.sendEmail(newContact).subscribe(res => {
       console.log('Email Success', res);
+      this.submitted = true;
+      setTimeout(() => {
+        this.submitted = false;
+      }, 5000);
     }, error => {
       console.log('Email Error', error);
     });
