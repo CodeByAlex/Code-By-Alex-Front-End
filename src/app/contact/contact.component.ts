@@ -12,6 +12,7 @@ export class ContactComponent implements OnInit {
   @Input() contactInfo: ContactInfo;
   submitted = false;
   contactForm: FormGroup;
+  submissionMessage: string;
 
   constructor(private emailService: EmailService, private formBuilder: FormBuilder) {
     this.contactForm = this.formBuilder.group({
@@ -45,13 +46,16 @@ export class ContactComponent implements OnInit {
   sendMail(newContact: ContactInfo) {
     this.emailService.sendEmail(newContact).subscribe(res => {
       console.log('Email Success', res);
+      this.submissionMessage = 'Thank You For Your Submission!';
       this.submitted = true;
-      setTimeout(() => {
-        this.submitted = false;
-      }, 5000);
     }, error => {
+      this.submissionMessage = 'Oops! Something must have gone wrong. Please try again later.';
+      this.submitted = true;
       console.log('Email Error', error);
     });
+    setTimeout(() => {
+      this.submitted = false;
+    }, 5000);
   }
 
   changePhoneModel(val: string) {

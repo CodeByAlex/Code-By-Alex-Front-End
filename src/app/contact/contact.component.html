@@ -39,7 +39,6 @@
                    class="form-control"
                    appPhoneFormatter
                    (ngModelChange)="changePhoneModel($event)"
-                   [ngModel]="contactInfo.phone"
                    formControlName="contact-phone-number"
                    placeholder="(xxx) xxx-xxxx"
                    maxlength="12">
@@ -65,7 +64,7 @@
         </div>
       </form>
     <div class="text-center col-xs-12 col-sm-offset-3 col-sm-6 col-sm-offset-3" [ngClass]="submitted==true? 'visible-trans':'hidden-trans'">
-      <h4>Thank You For Your Submission!</h4>
+      <h4>{{submissionMessage}}</h4>
     </div>
   </div>
 </div>
