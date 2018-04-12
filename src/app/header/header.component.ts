@@ -34,7 +34,7 @@ export class HeaderComponent {
     this.prevPosition = this.ss.getCurrentYPosition();
     this.links.forEach(link => {
       if (link.nativeElement.id.includes(this.focusedSection)) {
-        link.nativeElement.focus(true);
+        link.nativeElement.focus();
       }
     });
   }
