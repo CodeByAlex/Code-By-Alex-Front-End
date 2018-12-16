@@ -27,33 +27,41 @@ export class AbilitiesComponent {
       new Ability('Languages', 'CSS', 4),
       new Ability('Languages', 'Typescript', 4),
       new Ability('Languages', 'SQL', 3),
-      new Ability('Languages', 'JQuery', 2),
       new Ability('Languages', 'Python', 1),
-      new Ability('Languages', 'NodeJs', 1)];
+      new Ability('Languages', 'NodeJs', 1)
+    ];
     this.frameworks = [
-      new Ability('Frameworks', 'Angular', 4)];
+      new Ability('Frameworks', 'Angular', 5),
+      new Ability('Languages', 'JQuery', 3),
+      new Ability('Frameworks', 'React', 1),
+    ];
     this.testTools = [
       new Ability('Test Tools', 'Junit', 5),
       new Ability('Test Tools', 'Fitnesse', 5),
-      new Ability('Test Tools', 'Postman', 3),
-      new Ability('Test Tools', 'Jasmine', 3)];
+      new Ability('Test Tools', 'Jasmine', 4),
+      new Ability('Test Tools', 'Postman', 3)
+    ];
     this.databases = [
       new Ability('Databases', 'Oracle', 4),
       new Ability('Databases', 'Postgresql', 3),
       new Ability('Databases', 'H2', 2),
-      new Ability('Databases', 'Mongo', 1)];
+      new Ability('Databases', 'Mongo', 1)
+    ];
     this.operatingSys = [
       new Ability('Operating Systems', 'Windows', 5),
       new Ability('Operating Systems', 'OSX', 5),
-      new Ability('Operating Systems', 'Linux', 3)];
+      new Ability('Operating Systems', 'Linux', 3)
+    ];
     this.devTools = [
+      new Ability('Development Tools', 'Visual Studio', 5),
       new Ability('Development Tools', 'Webstorm', 5),
       new Ability('Development Tools', 'Eclipse', 5),
-      new Ability('Development Tools', 'Netbeans', 4),
+      new Ability('Development Tools', 'GitHub', 5),
       new Ability('Development Tools', 'GitLab', 4),
-      new Ability('Development Tools', 'SourceTree', 3),
+      new Ability('Development Tools', 'SourceTree', 4),
       new Ability('Development Tools', 'Maven', 3),
-      new Ability('Development Tools', 'Latex', 3)];
+      new Ability('Development Tools', 'Latex', 3)
+    ];
   }
 
   getArray(num: number) {

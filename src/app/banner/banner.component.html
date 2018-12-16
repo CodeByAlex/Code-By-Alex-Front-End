@@ -3,13 +3,16 @@
       <div class="row">
         <div class="hero-text col-xs-12 col-sm-8">
           <h1>Alex Wilson</h1>
-          <div class="horizontal-line"></div>
+          <div class="horizontal-line" aria-hidden="true"></div>
           <h4>Creative Technical Solution Engineer (Developer)</h4>
         </div>
       </div>
       <div class="row">
         <div class="arrow bounce col-xs-12">
-          <a href="#about" class="glyphicon glyphicon-chevron-down" (click)="scrollToSection('about', $event)"></a>
+          <a href="#about" 
+             class="glyphicon glyphicon-chevron-down" 
+             aria-hidden="true"
+             (click)="scrollToSection('about', $event)"></a>
         </div>
       </div>
   </div>

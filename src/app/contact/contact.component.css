@@ -2,10 +2,6 @@ textarea {
   resize:none;
 }
 
-hr{
-  border: 1px solid lightgray;
-}
-
 /* Fade-In Effect */
 .visible-trans {
   visibility: visible;

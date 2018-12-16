@@ -14,9 +14,10 @@ import {SmoothScrollService} from './smooth-scroll.service';
 import {EmailService} from './contact/email.service';
 import {PhonePipe} from './contact/phonePipe';
 import { ErrorMessagesComponent } from './error-messages/error-messages.component';
-import {ConfigurationService} from './config/configuration.service';
 import { PhoneFormatterDirective } from './contact/phone-formatter.directive';
 import {ElementFinderService} from './element-finder.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SpeakingComponent } from './speaking/speaking.component';
 
 @NgModule({
   declarations: [
@@ -30,15 +31,17 @@ import {ElementFinderService} from './element-finder.service';
     BannerComponent,
     PhonePipe,
     ErrorMessagesComponent,
-    PhoneFormatterDirective
+    PhoneFormatterDirective,
+    SpeakingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [ SmoothScrollService, EmailService, ConfigurationService, PhonePipe, ElementFinderService],
+  providers: [ SmoothScrollService, EmailService, PhonePipe, ElementFinderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
