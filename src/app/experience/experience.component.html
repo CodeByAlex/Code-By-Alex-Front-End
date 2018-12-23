@@ -1,4 +1,4 @@
-<div id="experience" class="section-style overlay-white">
+<div class="section-style overlay-white">
     <div class="container">
       <div id="experience-default" [ngClass]="currentIndex==ALL_EXPERIENCE_INDEX? 'fade-in':'fade-out'">
           <div class="row">
@@ -42,17 +42,19 @@
                 <div class="service_icon">
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </div>
-                <h3>User Interface <br>Design</h3>
+                <h3>User Centered<br>Design</h3>
                 <p class="service-box-text">Research backed designs that cause the user to forget that they are looking at a screen</p>
-                <a href="#experience" aria-label="Click here to learn more about Alex's user interface design experience" 
+                <a href="#experience" aria-label="Click here to learn more about Alex's user centered design experience" 
                     (click)="switchSectionView(UX_SECTION_INDEX)" class="btn btn-medium btn-gray">
                     Learn More
                 </a>
               </div>
             </div>
-        </div>
+          </div>
       </div>
+
       <div id="experience-types">
+
         <div id="experience-front-end" [ngClass]="currentIndex==FRONT_END_SECTION_INDEX? 'fade-in':'fade-out'">
           <div class="row">
             <h3 class="col-xs-9 col-sm-11 text-left">Front End</h3>
@@ -62,30 +64,24 @@
           </div>
           <hr role="presentation">
 
-          <div class="col-xs-12">
-            <h4>ESRD Quality Reporting System for CMS, Facilities Release</h4>
-            <p><b>Skillset:</b> Angular Framework, HTML, CSS, Apache<br>
-              <b>Company:</b> Bellese Technologies</p>
-            <ul>
-              <li>Designed and developed reusable code components and libraries using the angular framework</li>
-              <li>Implemented a clean code methodology through CSS best practices</li>
-              <li>Designed and developed dynamic form components that kept styling consistent across all releases, reduced lines of code, and generated the typescript form upon rendering</li>
-              <li>Developed many pages that included form handling and complex conditional routing</li>
+          <div class="col-xs-12" *ngFor="let frontEndExperience of frontEndExperiences" >
+            <h4>{{frontEndExperience?.project}}</h4>
+            <p>
+              <ng-container *ngIf="frontEndExperience?.skillset">
+                <b>Skillset:</b> {{frontEndExperience.skillset.join(", ")}}
+                <br>
+              </ng-container>
+              <ng-container *ngIf="frontEndExperience?.company">
+                <b>Company:</b> {{frontEndExperience.company}}
+              </ng-container>
+            </p>
+            <ul *ngIf="frontEndExperience?.details">
+              <li *ngFor="let detail of frontEndExperience.details" [innerHTML]="detail"></li>
             </ul>
-
             <br>
-
-            <h4>Bellese Business Development Proposal </h4>
-            <p><b>Skillset:</b> HTML, CSS<br>
-              <b>Company:</b> Bellese Technologies</p>
-            <ul>
-              <li>Worked on front end for proposal exercises and assisted in the writing effort</li>
-              <li>Utilized the Bootstrap library for the grid layout and basic styling</li>
-              <li>Designed the web page with inspiration from the styles created by the United States Web Design Standards</li>
-            </ul>
           </div>
-
         </div>
+
         <div id="experience-back-end" [ngClass]="currentIndex==BACK_END_SECTION_INDEX? 'fade-in':'fade-out'">
           <div class="row">
             <h3 class="col-xs-9 col-sm-11 text-left">Back End</h3>
@@ -94,64 +90,51 @@
             </a>
           </div>
           <hr role="presentation">
-          <div class="col-xs-12">
-            <h4>ESRD Quality Reporting System for CMS, Facilities Release</h4>
-            <p><b>Skillset:</b> Java, Spring Cloud, SQL, Liquibase <br>
-            <b>Company:</b> Bellese Technologies</p>
-            <ul>
-              <li>Developed the microservice layer made up of an application zone and a data zone </li>
-              <li>Developed fault-tolerant, scalable REST APIs</li>
-              <li>Created liquibase scripts for a transition from using an Oracle Database to a Postgresql Database</li>
+          <div class="col-xs-12" *ngFor="let backEndExperience of backEndExperiences" >
+            <h4>{{backEndExperience?.project}}</h4>
+            <p>
+              <ng-container *ngIf="backEndExperience?.skillset">
+                <b>Skillset:</b> {{backEndExperience.skillset.join(", ")}}
+                <br>
+              </ng-container>
+              <ng-container *ngIf="backEndExperience?.company">
+                <b>Company:</b> {{backEndExperience.company}}
+              </ng-container>
+            </p>
+            <ul *ngIf="backEndExperience?.details">
+              <li *ngFor="let detail of backEndExperience.details" [innerHTML]="detail"></li>
             </ul>
-
             <br>
-
-            <h4>ESRD Quality Incentive Program for CMS</h4>
-            <p><b>Skillset:</b> Java, Spring Hibernate, SQL<br>
-            <b>Company:</b> Edaptive Systems/ Bellese Technologies</p>
-            <ul>
-              <li>Developed complex algorithms used to measure the quality of facilities treating patients with end stage renal disease</li>
-              <li>Introduced the use of an H2 database to the development team for the database agnostic testing of sql queries</li>
-              <li>Worked with Arbor Research alongside business analysts to design the software based on given criteria</li>
-              <li>Tested and analyzed code using various score validation efforts including discrepancy detection between two versions of calculated results</li>
-              <li>Redesigned project elements to use utility classes for common calculations which reduced code complexity and increased accuracy, readability, and performance</li>
-            </ul>
-
-            <br>
-
-            <h4>Scheduling and Path Planning for Computational Ferrying Research Project</h4>
-            <p><b>Skillset:</b> Python, Latex<br>
-            <b>Company:</b> G2 Inc.</p>
-            <ul>
-              <li>Developed scheduling and planning algorithms to create optimal task completion order for mobile high performance computers</li>
-              <li>Created a computer simulation using Python UI libraries</li>
-              <li>Collected data from the simulation to prove our research hypothesis on the innovative usage of path-finding and automation</li>
-              <li>Co-authored workshop paper describing our findings that was accepted for the 2016 IEEE Military Communications Conference and published in IEEE</li>
-            </ul>
           </div>
         </div>
+
         <div id="experience-ux" [ngClass]="currentIndex==UX_SECTION_INDEX? 'fade-in':'fade-out'">
           <div class="row">
-            <h3 class="col-xs-9 col-sm-11 text-left">User Interface Design</h3>
+            <h3 class="col-xs-9 col-sm-11 text-left">User Centered Design</h3>
             <a href="#experience" (click)="switchSectionView(ALL_EXPERIENCE_INDEX)" class="col-xs-2 col-sm-1">
               <div class="exit" aria-hidden="true"></div>
             </a>
           </div>
-          <div class="col-xs-12">
-            <h4>ESRD Quality Reporting System for CMS, Facilities Release</h4>
-            <p><b>Skillset:</b> HTML, CSS, Codepen IDE<br>
-              <b>Company:</b> Bellese Technologies</p>
-            <ul>
-              <li>Collaborated with the UX and development teams to develop new user-facing features</li>
-              <li>Worked as a member of the UX/UI design team to bridge the gap between UX and technical implementation taking
-                an active role on both sides and defining how the application looks as well as how it works</li>
-              <li>Recommended and enforced policies for the source-code control system (GIT) and the team’s use thereof</li>
-              <li>Ensured that front end code met accessibility requirements</li>
-              <li>Provided software expertise in responsive UI design</li>
-            </ul>
-          </div>
           <hr role="presentation">
+
+          <div class="col-xs-12" *ngFor="let designExperience of designExperiences" >
+            <h4>{{designExperience?.project}}</h4>
+            <p>
+              <ng-container *ngIf="designExperience?.skillset">
+                <b>Skillset:</b> {{designExperience.skillset.join(", ")}}
+                <br>
+              </ng-container>
+              <ng-container *ngIf="designExperience?.company">
+                <b>Company:</b> {{designExperience.company}}
+              </ng-container>
+            </p>
+            <ul *ngIf="designExperience?.details">
+              <li *ngFor="let detail of designExperience.details" [innerHTML]="detail"></li>
+            </ul>
+            <br>
+          </div>
         </div>
+        
       </div>
     </div>
 </div>

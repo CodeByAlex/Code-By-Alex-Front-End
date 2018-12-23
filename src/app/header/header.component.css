@@ -159,3 +159,31 @@
 *:focus {
   outline: none;
 }
+
+
+/* --------------------- */
+
+
+.progress-ring {
+  margin: 0;
+  position: relative;
+  left: -35px;
+  top: -60px;
+  z-index: 5;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.orange-arrow {
+  color: #e35a2e !important;
+}

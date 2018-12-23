@@ -32,7 +32,7 @@ import { SpeakingComponent } from './speaking/speaking.component';
     PhonePipe,
     ErrorMessagesComponent,
     PhoneFormatterDirective,
-    SpeakingComponent
+    SpeakingComponent,
   ],
   imports: [
     BrowserModule,

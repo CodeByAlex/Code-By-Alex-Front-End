@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, Input, OnInit, QueryList, ViewChildren} from '@angular/core';
+import {Component, ElementRef, HostListener, Input, OnInit, QueryList, ViewChildren, AfterViewInit} from '@angular/core';
 import {SmoothScrollService} from '../smooth-scroll.service';
 
 @Component({
@@ -6,15 +6,32 @@ import {SmoothScrollService} from '../smooth-scroll.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
   @ViewChildren('link') links: QueryList<ElementRef>;
   @Input() focusedSection;
   isIn = false;
   prevPosition = 0;
   isScrollDown = false;
+  pagePercent = 0;
 
+  circle = null;
+  radius = null;
+  circumference = null;
+  constructor(private ss: SmoothScrollService) {
+  }
 
-  constructor(private ss: SmoothScrollService) { }
+  ngAfterViewInit() {
+    this.circle = document.querySelector('circle');
+    this.radius = this.circle.r.baseVal.value;
+    this.circumference = this.radius * 2 * Math.PI;
+    this.circle.style.strokeDasharray = `${this.circumference} ${this.circumference}`;
+    this.circle.style.strokeDashoffset = `${this.circumference}`;
+  }
+
+  setProgress(percent) {
+    const offset = this.circumference - percent * this.circumference;
+    this.circle.style.strokeDashoffset = offset;
+  }
 
   toggleState() {
     this.isIn = this.isIn === false ? true : false;
@@ -30,8 +47,14 @@ export class HeaderComponent {
   }
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
-    this.isScrollDown = this.prevPosition < this.ss.getCurrentYPosition();
-    this.prevPosition = this.ss.getCurrentYPosition();
+    const currentPosition = this.ss.getCurrentYPosition();
+    this.isScrollDown = this.prevPosition < currentPosition;
+    this.prevPosition = currentPosition;
+    this.pagePercent = currentPosition / document.getElementById('contact').offsetTop;
+    if (this.pagePercent <= 1) {
+      this.setProgress(this.pagePercent);
+    }
+
     this.links.forEach(link => {
       if (link.nativeElement.id.includes(this.focusedSection)) {
         link.nativeElement.focus();

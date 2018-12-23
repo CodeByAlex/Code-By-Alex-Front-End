@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http/src/static_response';
 import * as emailjs from 'emailjs-com';
-import { Config } from 'assets/config';
+import { Config } from '../../assets/config';
 @Injectable()
 export class EmailService {
 

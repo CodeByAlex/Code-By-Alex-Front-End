@@ -1,52 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
 .section-style {
-  background-size: cover;
-  min-height: 100vh;
-  height: auto;
-  padding-bottom: 50px;
-  padding-top: 50px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background-attachment: fixed;
-}
-
-body{
-  font-family: 'Raleway', sans-serif;
-}
-
-.overlay-white{
-  background-color: white;
-}
-
-.overlay-cream{
-  background-color: #fff7e5;
-}
-
-.load-spinner {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #E35A2E; /* Blue */
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  animation: spin 2s linear infinite;
-}
-
-.center-spin{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+    background-size: cover;
+    min-height: 100vh;
+    height: auto;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-attachment: fixed;
+  }
+  
+  body{
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .overlay-white{
+    background-color: white;
+  }
+  
+  .overlay-cream{
+    background-color: #fff7e5;
+  }
+  
+  .load-spinner {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #E35A2E; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+  }
+  
+  .center-spin{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

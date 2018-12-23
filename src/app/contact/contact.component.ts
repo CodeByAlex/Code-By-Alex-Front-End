@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import {ContactInfo} from './contactInfo';
 import {EmailService} from './email.service';
-import 'rxjs/add/operator/map';
+import 'rxjs';
 
 @Component({
   selector: 'app-contact',

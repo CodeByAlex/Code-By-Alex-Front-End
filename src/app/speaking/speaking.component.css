@@ -1,3 +1,16 @@
 hr{
     border: 1px solid lightgray;
 }
+
+.speaking-margins {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.talk-description {
+    margin-top: 20px;
+}
+
+.talk-image {
+    margin-top: 25px;
+}

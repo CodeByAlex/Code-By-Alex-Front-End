@@ -3,7 +3,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <a #link id="home-link" class="navbar-brand title-font" href="#home" (click)="scrollToSection('home', $event)">Code By Alex</a>
-      <button type="button" class="navbar-toggle collapsed" (click)="toggleState()">
+      <button type="button" class="navbar-toggle collapsed" (click)="toggleState()" aria-label="Menu">
         <span class="icon-bar" aria-hidden="true"></span>
         <span class="icon-bar" aria-hidden="true"></span>
         <span class="icon-bar" aria-hidden="true"></span>
@@ -27,6 +27,17 @@
 
 <div>
   <div href="#home" (click)="scrollToSection('home', $event)" [ngClass]="(prevPosition<=180)?'return-to-top fade-out disable ':'return-to-top fade-in'">
-    <i class="glyphicon glyphicon-chevron-up"></i>
-  </div>
-</div>
+    <i class="glyphicon glyphicon-chevron-up" [ngClass]="{'orange-arrow' : pagePercent > .95}"></i>
+    <svg
+   class="progress-ring"
+   width="120"
+   height="120">
+  <circle
+    class="progress-ring__circle"
+    stroke="#e35a2e"
+    stroke-width="4"
+    fill="transparent"
+    r="21"
+    cx="59"
+    cy="60"/>
+</svg>
