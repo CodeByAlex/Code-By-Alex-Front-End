@@ -6,7 +6,7 @@
 }
 
 .bg-image {
-  background-image: url("../../assets/cup-of-coffee.jpg");
+  background-image: url("file:../../assets/cup-of-coffee.jpg");
   background-size: cover;
 }
 
