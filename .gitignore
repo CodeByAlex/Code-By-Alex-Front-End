@@ -36,6 +36,7 @@ codebyalex.pem
 
 # config
 /src/assets/*
+.env
 
 # e2e
 /e2e/*.js

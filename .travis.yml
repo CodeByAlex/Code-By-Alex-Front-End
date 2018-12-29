@@ -15,7 +15,7 @@ before_install:
 before_script: 
   - npm install -g @angular/cli
   - npm install 
-  - ng build --prod
+  - npm run-script build
   - echo 'Angular build successful'
 script:
   - ng test --watch=false

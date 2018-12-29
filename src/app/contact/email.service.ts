@@ -5,6 +5,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Response } from '@angular/http/src/static_response';
 import * as emailjs from 'emailjs-com';
 import { Config } from '../../assets/config';
+import { environment } from 'src/environments/environment';
+
 @Injectable()
 export class EmailService {
 
@@ -16,7 +18,7 @@ export class EmailService {
     const data = {
       service_id: service_id,
       template_id: template_id,
-      user_id: Config.EMAIL_JS_USER_ID,
+      user_id: environment.emailUserId,
       template_params: {
         'from_name': message.name,
         'from_email': message.email,

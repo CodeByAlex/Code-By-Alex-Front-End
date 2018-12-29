@@ -58,7 +58,7 @@ export class ContactComponent implements OnInit {
     this.emailService.sendEmail(newContact)
     .subscribe(
         (data) => {
-          if(data === ContactComponent.SUCCESS_RESPONSE){
+          if (data === ContactComponent.SUCCESS_RESPONSE) {
             this.handleSuccess();
           } else {
             this.handleError();
@@ -82,7 +82,7 @@ export class ContactComponent implements OnInit {
     }, 5000);
   }
 
-  handleSuccess(){
+  handleSuccess() {
     this.submitted = true;
     this.submissionMessage = 'Thank You For Your Submission!';
     setTimeout(() => {
