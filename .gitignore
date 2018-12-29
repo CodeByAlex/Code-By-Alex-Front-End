@@ -35,7 +35,6 @@ testem.log
 codebyalex.pem
 
 # config
-/src/assets/*
 .env
 
 # e2e
