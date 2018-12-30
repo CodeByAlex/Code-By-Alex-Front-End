@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BannerComponent } from './banner.component';
+import { SmoothScrollService } from 'src/app/smooth-scroll.service';
 
 describe('BannerComponent', () => {
   let component: BannerComponent;
@@ -8,7 +9,8 @@ describe('BannerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BannerComponent ]
+      declarations: [ BannerComponent ],
+      providers: [SmoothScrollService]
     })
     .compileComponents();
   }));
