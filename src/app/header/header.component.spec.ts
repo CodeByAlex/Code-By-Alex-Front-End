@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
+import { SmoothScrollService } from 'src/app/smooth-scroll.service';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -8,7 +9,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent ],
+      providers: [SmoothScrollService]
     })
     .compileComponents();
   }));
