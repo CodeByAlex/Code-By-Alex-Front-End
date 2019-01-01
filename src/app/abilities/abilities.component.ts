@@ -12,25 +12,24 @@ export class AbilitiesComponent {
   testTools: Ability [];
   databases: Ability [];
   operatingSys: Ability [];
-  devTools: Ability [];
+  devOps: Ability [];
   abilitySection: Ability [][];
   starNumber: number;
 
   constructor() {
     this.starNumber = 5;
     this.setUpData();
-    this.abilitySection = [this.languages, this.frameworks, this.testTools, this.databases, this.operatingSys, this.devTools];
+    this.abilitySection = [this.languages, this.frameworks, this.testTools, this.databases, this.operatingSys, this.devOps];
   }
 
   setUpData(): void {
     this.languages = [
       new Ability('Java', 4),
-      new Ability('HTML', 4),
-      new Ability('CSS', 4),
+      new Ability('HTML5', 4),
       new Ability('Typescript', 4),
+      new Ability('CSS3', 3),
       new Ability('SQL', 3),
       new Ability('Python', 1),
-      new Ability('NodeJs', 1)
     ];
     this.frameworks = [
       new Ability('Angular', 5),
@@ -39,7 +38,6 @@ export class AbilitiesComponent {
     ];
     this.testTools = [
       new Ability('Junit', 5),
-      new Ability('Fitnesse', 5),
       new Ability('Jasmine', 4),
       new Ability('Postman', 3)
     ];
@@ -54,15 +52,11 @@ export class AbilitiesComponent {
       new Ability('OSX', 5),
       new Ability('Linux', 3)
     ];
-    this.devTools = [
-      new Ability('Visual Studio', 5),
-      new Ability('Webstorm', 5),
-      new Ability('Eclipse', 5),
-      new Ability('GitHub', 5),
-      new Ability('GitLab', 4),
-      new Ability('SourceTree', 4),
-      new Ability('Maven', 3),
-      new Ability('Latex', 3)
+    this.devOps = [
+      new Ability('AWS S3', 3),
+      new Ability('Travis CI', 3),
+      new Ability('AWS Route 52', 2),
+      new Ability('AWS EC2', 2),
     ];
   }
 

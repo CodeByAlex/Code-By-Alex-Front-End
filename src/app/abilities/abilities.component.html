@@ -26,8 +26,8 @@
 
         <div class="col-xs-12
                     col-md-6">
-          <h4>Tools</h4>
-          <ul class="no-bullets" *ngFor="let tool of devTools">
+          <h4>Dev Ops</h4>
+          <ul class="no-bullets" *ngFor="let tool of devOps">
             <li>
               <span class="ability-title text-left">{{tool.abilityName}}:</span>
               <span *ngFor="let i of getArray(5)" [ngClass]="(i> tool.abilityLevel)?'star-icon empty':'star-icon full'">☆</span>
