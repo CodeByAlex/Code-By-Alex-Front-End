@@ -26,6 +26,7 @@ deploy:
   bucket: "codebyalex.com"
   skip_cleanup: true
   acl: public_read
+  local_dir: dist
 branches:
   only:
     - master
