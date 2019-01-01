@@ -19,4 +19,13 @@ before_script:
   - echo 'Angular build successful'
 script:
   - ng test --watch=false
-after_success: 
+deploy:
+  provider: s3
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: "codebyalex.com"
+  skip_cleanup: true
+  acl: public_read
+branches:
+  only:
+    - master
