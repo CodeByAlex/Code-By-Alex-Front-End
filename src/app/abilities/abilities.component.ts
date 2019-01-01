@@ -55,7 +55,7 @@ export class AbilitiesComponent {
     this.devOps = [
       new Ability('AWS S3', 3),
       new Ability('Travis CI', 3),
-      new Ability('AWS Route 52', 2),
+      new Ability('AWS Route 53', 2),
       new Ability('AWS EC2', 2),
     ];
   }
