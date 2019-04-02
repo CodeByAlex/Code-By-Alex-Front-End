@@ -27,15 +27,15 @@ export class AbilitiesComponent {
       new Ability('Java', 4),
       new Ability('HTML5', 4),
       new Ability('Typescript', 4),
-      new Ability('Javacript', 3),
+      new Ability('Javacript', 4),
       new Ability('CSS3', 3),
       new Ability('SQL', 3),
       new Ability('Python', 1),
     ];
     this.frameworks = [
       new Ability('Angular', 5),
+      new Ability('React', 3),
       new Ability('JQuery', 3),
-      new Ability('React', 2),
     ];
     this.testTools = [
       new Ability('Junit', 5),
@@ -46,7 +46,7 @@ export class AbilitiesComponent {
       new Ability('Oracle', 4),
       new Ability('Postgresql', 3),
       new Ability('H2', 2),
-      new Ability('Dynamo', 1)
+      new Ability('Dynamo', 2)
     ];
     this.operatingSys = [
       new Ability('Windows', 5),
@@ -56,6 +56,7 @@ export class AbilitiesComponent {
     this.devOps = [
       new Ability('AWS S3', 3),
       new Ability('Travis CI', 3),
+      new Ability('AWS Lambda', 3),
       new Ability('AWS Route 53', 2),
       new Ability('AWS EC2', 2),
     ];
