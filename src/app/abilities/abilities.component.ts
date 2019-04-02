@@ -49,8 +49,8 @@ export class AbilitiesComponent {
       new Ability('Dynamo', 2)
     ];
     this.operatingSys = [
-      new Ability('Windows', 5),
       new Ability('OSX', 5),
+      new Ability('Windows', 5),
       new Ability('Linux', 3)
     ];
     this.devOps = [
