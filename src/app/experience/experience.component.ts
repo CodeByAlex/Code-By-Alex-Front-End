@@ -55,7 +55,7 @@ export class ExperienceComponent {
         ['Angular Framework', 'SCSS', 'Storybook', 'Adobe Experience Manager', 'JQuery'],
         ['Created and documented a front-end architecture design that supported the needs of the GIS project',
          'Developed a cross-browser and Angular version agnostic Dynamic Component Loader library used to add the capability of dragging ' +
-         'and droping Angular components within an authorable environment',
+         'and dropping Angular components within an authorable environment',
          'Designed and developed flexible components for use in and and outside of a content management system'
          ,
         ]
